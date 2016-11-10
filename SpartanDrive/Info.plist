@@ -28,6 +28,14 @@
 				<string>com.googleusercontent.apps.625106757079-g0m2fd0bmpqj9t4fqqqiamim3v124q01</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>CMPE137.SpartanDrive</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>

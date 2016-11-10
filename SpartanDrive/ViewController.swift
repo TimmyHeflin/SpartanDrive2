@@ -10,7 +10,6 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import GoogleSignIn
-
 class ViewController: UIViewController,GIDSignInUIDelegate {
 
     @IBOutlet weak var m_UserEmail: UITextField!
@@ -37,6 +36,7 @@ class ViewController: UIViewController,GIDSignInUIDelegate {
         sign(<#T##signIn: GIDSignIn!##GIDSignIn!#>, didSignInFor: <#T##GIDGoogleUser!#>, withError: <#T##NSError!#>)
     }*/
     
+
     func sign(signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: NSError!) {
         if let error = error {
             print(error.localizedDescription)
@@ -65,6 +65,8 @@ class ViewController: UIViewController,GIDSignInUIDelegate {
             }
         })
     }
+    
+    
     
     
     
