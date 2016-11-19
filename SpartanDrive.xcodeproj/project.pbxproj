@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04DBD59B1DDED50500AC6C1D /* FileUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DBD59A1DDED50500AC6C1D /* FileUploadViewController.swift */; };
 		3F797A8B1DCEA10800F46482 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F797A8A1DCEA10800F46482 /* AppDelegate.swift */; };
 		3F797A8D1DCEA10800F46482 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F797A8C1DCEA10800F46482 /* ViewController.swift */; };
 		3F797A901DCEA10800F46482 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F797A8E1DCEA10800F46482 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		04DBD59A1DDED50500AC6C1D /* FileUploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUploadViewController.swift; sourceTree = "<group>"; };
 		3F797A871DCEA10800F46482 /* SpartanDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpartanDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F797A8A1DCEA10800F46482 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F797A8C1DCEA10800F46482 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				3F797A8A1DCEA10800F46482 /* AppDelegate.swift */,
 				3F797A8C1DCEA10800F46482 /* ViewController.swift */,
 				3F797A8E1DCEA10800F46482 /* Main.storyboard */,
+				04DBD59A1DDED50500AC6C1D /* FileUploadViewController.swift */,
 				3F797A941DCEA10800F46482 /* Assets.xcassets */,
 				3F797A961DCEA10800F46482 /* LaunchScreen.storyboard */,
 				3F797A991DCEA10800F46482 /* Info.plist */,
@@ -242,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F797A8D1DCEA10800F46482 /* ViewController.swift in Sources */,
+				04DBD59B1DDED50500AC6C1D /* FileUploadViewController.swift in Sources */,
 				3F797A8B1DCEA10800F46482 /* AppDelegate.swift in Sources */,
 				3F797A931DCEA10800F46482 /* SpartanDrive.xcdatamodeld in Sources */,
 			);

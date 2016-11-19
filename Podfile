@@ -10,5 +10,6 @@ target 'SpartanDrive' do
 	pod 'Firebase'
 	pod 'Firebase/Auth'
 	pod 'GoogleSignIn'
+	pod ‘Firebase/Storage’
 
 end
