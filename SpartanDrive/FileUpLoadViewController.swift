@@ -12,9 +12,20 @@ import Firebase
 class FileUploadViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     @IBOutlet weak var imageToPost: UIImageView!
+    var ref: FIRDatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ref = FIRDatabase.database().reference()
 
+        //FIRAuth.signInWithCredential(FIRAuth.auth())
+        if let user = FIRAuth.auth()?.currentUser {
+            print("signed in")
+        } else {
+            print("not here")
+        }
+        
         // Do any additional setup after loading the view.
     }
 
@@ -54,6 +65,7 @@ class FileUploadViewController: UIViewController, UINavigationControllerDelegate
                 print(metadata)
                 
         })
+        
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     /*
