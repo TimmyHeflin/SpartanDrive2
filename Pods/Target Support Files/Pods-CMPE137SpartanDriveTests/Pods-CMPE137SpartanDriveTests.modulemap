@@ -1,0 +1,6 @@
+framework module Pods_CMPE137SpartanDriveTests {
+  umbrella header "Pods-CMPE137SpartanDriveTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
