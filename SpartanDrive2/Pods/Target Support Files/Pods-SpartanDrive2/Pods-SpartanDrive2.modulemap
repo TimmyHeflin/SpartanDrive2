@@ -1,0 +1,6 @@
+framework module Pods_SpartanDrive2 {
+  umbrella header "Pods-SpartanDrive2-umbrella.h"
+
+  export *
+  module * { export * }
+}

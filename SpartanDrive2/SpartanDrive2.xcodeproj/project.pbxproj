@@ -1,0 +1,805 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0443C3041DE4A8D7003FA2FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443C3031DE4A8D7003FA2FA /* AppDelegate.swift */; };
+		0443C3061DE4A8D7003FA2FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443C3051DE4A8D7003FA2FA /* ViewController.swift */; };
+		0443C3091DE4A8D7003FA2FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0443C3071DE4A8D7003FA2FA /* Main.storyboard */; };
+		0443C30B1DE4A8D7003FA2FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0443C30A1DE4A8D7003FA2FA /* Assets.xcassets */; };
+		0443C30E1DE4A8D7003FA2FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0443C30C1DE4A8D7003FA2FA /* LaunchScreen.storyboard */; };
+		0443C3191DE4A8D8003FA2FA /* SpartanDrive2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443C3181DE4A8D8003FA2FA /* SpartanDrive2Tests.swift */; };
+		0443C3241DE4A8D8003FA2FA /* SpartanDrive2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443C3231DE4A8D8003FA2FA /* SpartanDrive2UITests.swift */; };
+		0443C3331DE4AB8D003FA2FA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443C3321DE4AB8D003FA2FA /* RegisterViewController.swift */; };
+		0443C3351DE4BA63003FA2FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0443C3341DE4BA63003FA2FA /* GoogleService-Info.plist */; };
+		0443C3381DE4BE16003FA2FA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443C3371DE4BE16003FA2FA /* LoginViewController.swift */; };
+		0443C3411DE505F7003FA2FA /* upload_defaut_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0443C3401DE505F7003FA2FA /* upload_defaut_image.jpg */; };
+		0443C3441DE5086F003FA2FA /* PostImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443C3431DE5086F003FA2FA /* PostImageViewController.swift */; };
+		0443C3461DE8D636003FA2FA /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443C3451DE8D636003FA2FA /* ImageCollectionViewController.swift */; };
+		0443C34A1DE8DADC003FA2FA /* DriveImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443C3491DE8DADC003FA2FA /* DriveImage.swift */; };
+		04533D9B1DEC0505004F2B77 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04533D9A1DEC0505004F2B77 /* Extensions.swift */; };
+		04533D9D1DEC2DEF004F2B77 /* PhotoViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04533D9C1DEC2DEF004F2B77 /* PhotoViewCollectionViewCell.swift */; };
+		68D37EE8A8E129D29CF70339 /* Pods_SpartanDrive2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2ABEAF2AD26247D989CF4D8 /* Pods_SpartanDrive2UITests.framework */; };
+		A3924488D3BA654016E0F33A /* Pods_SpartanDrive2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E959DD9AB22A1C424A8AFD /* Pods_SpartanDrive2.framework */; };
+		B64421E49F6B5BABE012DC61 /* Pods_SpartanDrive2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A29742442B05E9DB555A0675 /* Pods_SpartanDrive2Tests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0443C3151DE4A8D8003FA2FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0443C2F81DE4A8D7003FA2FA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0443C2FF1DE4A8D7003FA2FA;
+			remoteInfo = SpartanDrive2;
+		};
+		0443C3201DE4A8D8003FA2FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0443C2F81DE4A8D7003FA2FA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0443C2FF1DE4A8D7003FA2FA;
+			remoteInfo = SpartanDrive2;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0443C3001DE4A8D7003FA2FA /* SpartanDrive2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpartanDrive2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0443C3031DE4A8D7003FA2FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0443C3051DE4A8D7003FA2FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = SpartanDrive2/ViewController.swift; sourceTree = "<group>"; };
+		0443C3081DE4A8D7003FA2FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0443C30A1DE4A8D7003FA2FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0443C30D1DE4A8D7003FA2FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0443C30F1DE4A8D7003FA2FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0443C3141DE4A8D8003FA2FA /* SpartanDrive2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpartanDrive2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0443C3181DE4A8D8003FA2FA /* SpartanDrive2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpartanDrive2Tests.swift; sourceTree = "<group>"; };
+		0443C31A1DE4A8D8003FA2FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0443C31F1DE4A8D8003FA2FA /* SpartanDrive2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpartanDrive2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0443C3231DE4A8D8003FA2FA /* SpartanDrive2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpartanDrive2UITests.swift; sourceTree = "<group>"; };
+		0443C3251DE4A8D8003FA2FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0443C3321DE4AB8D003FA2FA /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = SpartanDrive2/RegisterViewController.swift; sourceTree = "<group>"; };
+		0443C3341DE4BA63003FA2FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0443C3371DE4BE16003FA2FA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0443C3401DE505F7003FA2FA /* upload_defaut_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = upload_defaut_image.jpg; sourceTree = "<group>"; };
+		0443C3421DE507AE003FA2FA /* SpartanDrive2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpartanDrive2.entitlements; sourceTree = "<group>"; };
+		0443C3431DE5086F003FA2FA /* PostImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostImageViewController.swift; sourceTree = "<group>"; };
+		0443C3451DE8D636003FA2FA /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
+		0443C3491DE8DADC003FA2FA /* DriveImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriveImage.swift; sourceTree = "<group>"; };
+		04533D9A1DEC0505004F2B77 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		04533D9C1DEC2DEF004F2B77 /* PhotoViewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewCollectionViewCell.swift; sourceTree = "<group>"; };
+		3763C756F2119BC8E5FB4A71 /* Pods-SpartanDrive2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanDrive2Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpartanDrive2Tests/Pods-SpartanDrive2Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		39BA66DD40A30410E4821818 /* Pods-SpartanDrive2UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanDrive2UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpartanDrive2UITests/Pods-SpartanDrive2UITests.release.xcconfig"; sourceTree = "<group>"; };
+		99B71864AF0B071F255C2AF9 /* Pods-SpartanDrive2UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanDrive2UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpartanDrive2UITests/Pods-SpartanDrive2UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A29742442B05E9DB555A0675 /* Pods_SpartanDrive2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpartanDrive2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2ABEAF2AD26247D989CF4D8 /* Pods_SpartanDrive2UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpartanDrive2UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3D13C761C7E396E1AA1D705 /* Pods-SpartanDrive2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanDrive2Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpartanDrive2Tests/Pods-SpartanDrive2Tests.release.xcconfig"; sourceTree = "<group>"; };
+		B5E959DD9AB22A1C424A8AFD /* Pods_SpartanDrive2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpartanDrive2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E93CE9977D920B56A5071A1D /* Pods-SpartanDrive2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanDrive2.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpartanDrive2/Pods-SpartanDrive2.release.xcconfig"; sourceTree = "<group>"; };
+		F94023139ABFF47D97EE1E97 /* Pods-SpartanDrive2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanDrive2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpartanDrive2/Pods-SpartanDrive2.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0443C2FD1DE4A8D7003FA2FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3924488D3BA654016E0F33A /* Pods_SpartanDrive2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0443C3111DE4A8D8003FA2FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B64421E49F6B5BABE012DC61 /* Pods_SpartanDrive2Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0443C31C1DE4A8D8003FA2FA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68D37EE8A8E129D29CF70339 /* Pods_SpartanDrive2UITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0443C2F71DE4A8D7003FA2FA = {
+			isa = PBXGroup;
+			children = (
+				0443C3021DE4A8D7003FA2FA /* SpartanDrive2 */,
+				0443C3171DE4A8D8003FA2FA /* SpartanDrive2Tests */,
+				0443C3221DE4A8D8003FA2FA /* SpartanDrive2UITests */,
+				0443C3011DE4A8D7003FA2FA /* Products */,
+				F2A249E8FD4A3B2C14B8B8FD /* Pods */,
+				9611B4FCA1E3CDE0B558DE8A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0443C3011DE4A8D7003FA2FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0443C3001DE4A8D7003FA2FA /* SpartanDrive2.app */,
+				0443C3141DE4A8D8003FA2FA /* SpartanDrive2Tests.xctest */,
+				0443C31F1DE4A8D8003FA2FA /* SpartanDrive2UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0443C3021DE4A8D7003FA2FA /* SpartanDrive2 */ = {
+			isa = PBXGroup;
+			children = (
+				04533D991DEC04F7004F2B77 /* Helpers */,
+				0443C3421DE507AE003FA2FA /* SpartanDrive2.entitlements */,
+				0443C33F1DE505D8003FA2FA /* images */,
+				0443C3361DE4BCFC003FA2FA /* Models */,
+				0443C3341DE4BA63003FA2FA /* GoogleService-Info.plist */,
+				0443C3311DE4AB4F003FA2FA /* Controllers */,
+				0443C3031DE4A8D7003FA2FA /* AppDelegate.swift */,
+				0443C3071DE4A8D7003FA2FA /* Main.storyboard */,
+				0443C30A1DE4A8D7003FA2FA /* Assets.xcassets */,
+				0443C30C1DE4A8D7003FA2FA /* LaunchScreen.storyboard */,
+				0443C30F1DE4A8D7003FA2FA /* Info.plist */,
+				04533D9C1DEC2DEF004F2B77 /* PhotoViewCollectionViewCell.swift */,
+			);
+			path = SpartanDrive2;
+			sourceTree = "<group>";
+		};
+		0443C3171DE4A8D8003FA2FA /* SpartanDrive2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0443C3181DE4A8D8003FA2FA /* SpartanDrive2Tests.swift */,
+				0443C31A1DE4A8D8003FA2FA /* Info.plist */,
+			);
+			path = SpartanDrive2Tests;
+			sourceTree = "<group>";
+		};
+		0443C3221DE4A8D8003FA2FA /* SpartanDrive2UITests */ = {
+			isa = PBXGroup;
+			children = (
+				0443C3231DE4A8D8003FA2FA /* SpartanDrive2UITests.swift */,
+				0443C3251DE4A8D8003FA2FA /* Info.plist */,
+			);
+			path = SpartanDrive2UITests;
+			sourceTree = "<group>";
+		};
+		0443C3311DE4AB4F003FA2FA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0443C3051DE4A8D7003FA2FA /* ViewController.swift */,
+				0443C3321DE4AB8D003FA2FA /* RegisterViewController.swift */,
+				0443C3371DE4BE16003FA2FA /* LoginViewController.swift */,
+				0443C3431DE5086F003FA2FA /* PostImageViewController.swift */,
+				0443C3451DE8D636003FA2FA /* ImageCollectionViewController.swift */,
+			);
+			name = Controllers;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		0443C3361DE4BCFC003FA2FA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0443C3491DE8DADC003FA2FA /* DriveImage.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		0443C33F1DE505D8003FA2FA /* images */ = {
+			isa = PBXGroup;
+			children = (
+				0443C3401DE505F7003FA2FA /* upload_defaut_image.jpg */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		04533D991DEC04F7004F2B77 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				04533D9A1DEC0505004F2B77 /* Extensions.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		9611B4FCA1E3CDE0B558DE8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5E959DD9AB22A1C424A8AFD /* Pods_SpartanDrive2.framework */,
+				A29742442B05E9DB555A0675 /* Pods_SpartanDrive2Tests.framework */,
+				B2ABEAF2AD26247D989CF4D8 /* Pods_SpartanDrive2UITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F2A249E8FD4A3B2C14B8B8FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F94023139ABFF47D97EE1E97 /* Pods-SpartanDrive2.debug.xcconfig */,
+				E93CE9977D920B56A5071A1D /* Pods-SpartanDrive2.release.xcconfig */,
+				3763C756F2119BC8E5FB4A71 /* Pods-SpartanDrive2Tests.debug.xcconfig */,
+				B3D13C761C7E396E1AA1D705 /* Pods-SpartanDrive2Tests.release.xcconfig */,
+				99B71864AF0B071F255C2AF9 /* Pods-SpartanDrive2UITests.debug.xcconfig */,
+				39BA66DD40A30410E4821818 /* Pods-SpartanDrive2UITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0443C2FF1DE4A8D7003FA2FA /* SpartanDrive2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0443C3281DE4A8D8003FA2FA /* Build configuration list for PBXNativeTarget "SpartanDrive2" */;
+			buildPhases = (
+				34191E061B2EB9D0C0D0B4CA /* [CP] Check Pods Manifest.lock */,
+				0443C2FC1DE4A8D7003FA2FA /* Sources */,
+				0443C2FD1DE4A8D7003FA2FA /* Frameworks */,
+				0443C2FE1DE4A8D7003FA2FA /* Resources */,
+				610AA4233AC2696624D308A8 /* [CP] Embed Pods Frameworks */,
+				B8215B17264C862E5973EC38 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpartanDrive2;
+			productName = SpartanDrive2;
+			productReference = 0443C3001DE4A8D7003FA2FA /* SpartanDrive2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0443C3131DE4A8D8003FA2FA /* SpartanDrive2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0443C32B1DE4A8D8003FA2FA /* Build configuration list for PBXNativeTarget "SpartanDrive2Tests" */;
+			buildPhases = (
+				A087D4C33C476316095A620F /* [CP] Check Pods Manifest.lock */,
+				0443C3101DE4A8D8003FA2FA /* Sources */,
+				0443C3111DE4A8D8003FA2FA /* Frameworks */,
+				0443C3121DE4A8D8003FA2FA /* Resources */,
+				875508B4CE57BEC3EBD0E629 /* [CP] Embed Pods Frameworks */,
+				A707FE8E8C1CA318D5788BDF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0443C3161DE4A8D8003FA2FA /* PBXTargetDependency */,
+			);
+			name = SpartanDrive2Tests;
+			productName = SpartanDrive2Tests;
+			productReference = 0443C3141DE4A8D8003FA2FA /* SpartanDrive2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0443C31E1DE4A8D8003FA2FA /* SpartanDrive2UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0443C32E1DE4A8D8003FA2FA /* Build configuration list for PBXNativeTarget "SpartanDrive2UITests" */;
+			buildPhases = (
+				F2A71C66C6FAD27116E5DB5E /* [CP] Check Pods Manifest.lock */,
+				0443C31B1DE4A8D8003FA2FA /* Sources */,
+				0443C31C1DE4A8D8003FA2FA /* Frameworks */,
+				0443C31D1DE4A8D8003FA2FA /* Resources */,
+				B156815BD74E6651B6F61D6C /* [CP] Embed Pods Frameworks */,
+				064101A531BBAF693E0533AB /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0443C3211DE4A8D8003FA2FA /* PBXTargetDependency */,
+			);
+			name = SpartanDrive2UITests;
+			productName = SpartanDrive2UITests;
+			productReference = 0443C31F1DE4A8D8003FA2FA /* SpartanDrive2UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0443C2F81DE4A8D7003FA2FA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "duy nguyen";
+				TargetAttributes = {
+					0443C2FF1DE4A8D7003FA2FA = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 5SC9K3K4Z4;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
+					0443C3131DE4A8D8003FA2FA = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0443C2FF1DE4A8D7003FA2FA;
+					};
+					0443C31E1DE4A8D8003FA2FA = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0443C2FF1DE4A8D7003FA2FA;
+					};
+				};
+			};
+			buildConfigurationList = 0443C2FB1DE4A8D7003FA2FA /* Build configuration list for PBXProject "SpartanDrive2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0443C2F71DE4A8D7003FA2FA;
+			productRefGroup = 0443C3011DE4A8D7003FA2FA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0443C2FF1DE4A8D7003FA2FA /* SpartanDrive2 */,
+				0443C3131DE4A8D8003FA2FA /* SpartanDrive2Tests */,
+				0443C31E1DE4A8D8003FA2FA /* SpartanDrive2UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0443C2FE1DE4A8D7003FA2FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0443C3411DE505F7003FA2FA /* upload_defaut_image.jpg in Resources */,
+				0443C30E1DE4A8D7003FA2FA /* LaunchScreen.storyboard in Resources */,
+				0443C3351DE4BA63003FA2FA /* GoogleService-Info.plist in Resources */,
+				0443C30B1DE4A8D7003FA2FA /* Assets.xcassets in Resources */,
+				0443C3091DE4A8D7003FA2FA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0443C3121DE4A8D8003FA2FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0443C31D1DE4A8D8003FA2FA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		064101A531BBAF693E0533AB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpartanDrive2UITests/Pods-SpartanDrive2UITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		34191E061B2EB9D0C0D0B4CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		610AA4233AC2696624D308A8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpartanDrive2/Pods-SpartanDrive2-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		875508B4CE57BEC3EBD0E629 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpartanDrive2Tests/Pods-SpartanDrive2Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A087D4C33C476316095A620F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A707FE8E8C1CA318D5788BDF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpartanDrive2Tests/Pods-SpartanDrive2Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B156815BD74E6651B6F61D6C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpartanDrive2UITests/Pods-SpartanDrive2UITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8215B17264C862E5973EC38 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpartanDrive2/Pods-SpartanDrive2-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2A71C66C6FAD27116E5DB5E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0443C2FC1DE4A8D7003FA2FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04533D9D1DEC2DEF004F2B77 /* PhotoViewCollectionViewCell.swift in Sources */,
+				0443C34A1DE8DADC003FA2FA /* DriveImage.swift in Sources */,
+				0443C3461DE8D636003FA2FA /* ImageCollectionViewController.swift in Sources */,
+				0443C3381DE4BE16003FA2FA /* LoginViewController.swift in Sources */,
+				04533D9B1DEC0505004F2B77 /* Extensions.swift in Sources */,
+				0443C3331DE4AB8D003FA2FA /* RegisterViewController.swift in Sources */,
+				0443C3441DE5086F003FA2FA /* PostImageViewController.swift in Sources */,
+				0443C3061DE4A8D7003FA2FA /* ViewController.swift in Sources */,
+				0443C3041DE4A8D7003FA2FA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0443C3101DE4A8D8003FA2FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0443C3191DE4A8D8003FA2FA /* SpartanDrive2Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0443C31B1DE4A8D8003FA2FA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0443C3241DE4A8D8003FA2FA /* SpartanDrive2UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0443C3161DE4A8D8003FA2FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0443C2FF1DE4A8D7003FA2FA /* SpartanDrive2 */;
+			targetProxy = 0443C3151DE4A8D8003FA2FA /* PBXContainerItemProxy */;
+		};
+		0443C3211DE4A8D8003FA2FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0443C2FF1DE4A8D7003FA2FA /* SpartanDrive2 */;
+			targetProxy = 0443C3201DE4A8D8003FA2FA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0443C3071DE4A8D7003FA2FA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0443C3081DE4A8D7003FA2FA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0443C30C1DE4A8D7003FA2FA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0443C30D1DE4A8D7003FA2FA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0443C3261DE4A8D8003FA2FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0443C3271DE4A8D8003FA2FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0443C3291DE4A8D8003FA2FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F94023139ABFF47D97EE1E97 /* Pods-SpartanDrive2.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SpartanDrive2/SpartanDrive2.entitlements;
+				DEVELOPMENT_TEAM = 5SC9K3K4Z4;
+				INFOPLIST_FILE = SpartanDrive2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Spartan-Storage.SpartanDrive2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		0443C32A1DE4A8D8003FA2FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E93CE9977D920B56A5071A1D /* Pods-SpartanDrive2.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SpartanDrive2/SpartanDrive2.entitlements;
+				DEVELOPMENT_TEAM = 5SC9K3K4Z4;
+				INFOPLIST_FILE = SpartanDrive2/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Spartan-Storage.SpartanDrive2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		0443C32C1DE4A8D8003FA2FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3763C756F2119BC8E5FB4A71 /* Pods-SpartanDrive2Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SpartanDrive2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Spartan-Storage.SpartanDrive2Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpartanDrive2.app/SpartanDrive2";
+			};
+			name = Debug;
+		};
+		0443C32D1DE4A8D8003FA2FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3D13C761C7E396E1AA1D705 /* Pods-SpartanDrive2Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SpartanDrive2Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Spartan-Storage.SpartanDrive2Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpartanDrive2.app/SpartanDrive2";
+			};
+			name = Release;
+		};
+		0443C32F1DE4A8D8003FA2FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99B71864AF0B071F255C2AF9 /* Pods-SpartanDrive2UITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = SpartanDrive2UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Spartan-Storage.SpartanDrive2UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SpartanDrive2;
+			};
+			name = Debug;
+		};
+		0443C3301DE4A8D8003FA2FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39BA66DD40A30410E4821818 /* Pods-SpartanDrive2UITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = SpartanDrive2UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Spartan-Storage.SpartanDrive2UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = SpartanDrive2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0443C2FB1DE4A8D7003FA2FA /* Build configuration list for PBXProject "SpartanDrive2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0443C3261DE4A8D8003FA2FA /* Debug */,
+				0443C3271DE4A8D8003FA2FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0443C3281DE4A8D8003FA2FA /* Build configuration list for PBXNativeTarget "SpartanDrive2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0443C3291DE4A8D8003FA2FA /* Debug */,
+				0443C32A1DE4A8D8003FA2FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0443C32B1DE4A8D8003FA2FA /* Build configuration list for PBXNativeTarget "SpartanDrive2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0443C32C1DE4A8D8003FA2FA /* Debug */,
+				0443C32D1DE4A8D8003FA2FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0443C32E1DE4A8D8003FA2FA /* Build configuration list for PBXNativeTarget "SpartanDrive2UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0443C32F1DE4A8D8003FA2FA /* Debug */,
+				0443C3301DE4A8D8003FA2FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0443C2F81DE4A8D7003FA2FA /* Project object */;
+}

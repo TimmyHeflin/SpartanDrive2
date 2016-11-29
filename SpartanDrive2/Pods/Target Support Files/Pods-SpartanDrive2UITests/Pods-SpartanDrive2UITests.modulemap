@@ -1,0 +1,6 @@
+framework module Pods_SpartanDrive2UITests {
+  umbrella header "Pods-SpartanDrive2UITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

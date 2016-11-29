@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FileViewController: UIViewController {
+class FileViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

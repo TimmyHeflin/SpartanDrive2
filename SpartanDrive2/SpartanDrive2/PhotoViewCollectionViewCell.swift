@@ -10,4 +10,12 @@ import UIKit
 
 class PhotoViewCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var galleryImage: UIImageView!
+    
+        override func awakeFromNib() {
+            super.awakeFromNib()
+            //        // Initialization code
+//                    addSubview(galleryImage)
+        }
+    
 }

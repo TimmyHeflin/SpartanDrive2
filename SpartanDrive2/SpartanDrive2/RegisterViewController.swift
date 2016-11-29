@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-class LoginViewController: UIViewController {
+class RegisterViewController: UIViewController {
 
     
     let inputsContainerView: UIView = {
@@ -27,6 +27,18 @@ class LoginViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
         button.addTarget(self, action: #selector(handleRegister), for: .touchUpInside)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        return button
+    }()
+    
+    
+    lazy var cancelRegisterButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = UIColor(r: 80, g: 101, b: 161)
+        button.setTitle("Cancel", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.addTarget(self, action: #selector(cancelRegisterhandler), for: .touchUpInside)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         return button
     }()
@@ -80,9 +92,11 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
         view.addSubview(inputsContainerView)
         view.addSubview(loginRegisterButton)
+        view.addSubview(cancelRegisterButton)
         
         setupInputsContainerView()
         setupLoginRegisterButton()
+        setupCancelRegisterButton()
     }
 
     override func didReceiveMemoryWarning() {
@@ -145,6 +159,14 @@ class LoginViewController: UIViewController {
         loginRegisterButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
+    func setupCancelRegisterButton() {
+        //need x, y, width, height constraints
+        cancelRegisterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        cancelRegisterButton.topAnchor.constraint(equalTo:loginRegisterButton.bottomAnchor, constant: 12).isActive = true
+        cancelRegisterButton.widthAnchor.constraint(equalTo: loginRegisterButton.widthAnchor).isActive = true
+        cancelRegisterButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
+    
     @objc private func handleRegister(){
         guard let email = emailTextField.text, let password = passwordTextField.text, let name = nameTextField.text else {
             print("Form is not valid")
@@ -174,10 +196,17 @@ class LoginViewController: UIViewController {
                 }
                 
                 print("Saved user successfully into Firebase db")
-                
+                self.handleRegisterSuccess()
             })
-            
         })
+        
+    }
+    @objc private func cancelRegisterhandler(){
+        performSegue(withIdentifier: "RegisterSuccess", sender: self)
+
+    }
+    private func handleRegisterSuccess(){
+        performSegue(withIdentifier: "RegisterSuccess", sender: self)
     }
     /*
     // MARK: - Navigation
