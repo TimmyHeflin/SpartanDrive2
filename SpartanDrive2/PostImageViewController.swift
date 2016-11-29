@@ -72,6 +72,8 @@ class PostImageViewController: UIViewController,UIImagePickerControllerDelegate,
                         }
                         
                         print("Saved urls to database")
+                        self.handleSuccessUpload()
+                        
                     })
                     
                     print(metadata!.downloadURLs![0])
@@ -80,8 +82,13 @@ class PostImageViewController: UIViewController,UIImagePickerControllerDelegate,
         }
         
         }
-            
-            
+    
+    
+    private func handleSuccessUpload(){
+        
+            performSegue(withIdentifier: "UploadSuccess", sender: self)
+    }
+    
     func browserImageHandler(){
         let imagepicker = UIImagePickerController()
         imagepicker.delegate = self

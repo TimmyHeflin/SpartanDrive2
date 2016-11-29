@@ -52,7 +52,8 @@ class ImageCollectionViewController:UICollectionViewController,UICollectionViewD
             if user != nil{
                 let urls = self.databaseref.child("users").child(user.uid).child("IMG_URLS").observeSingleEvent(of: .value, with: { (snapshot) in
                     let value = snapshot.value as? NSDictionary
-                    //print(value)
+//                    print(value)
+                    if value != nil {
                     for (key,val) in value! {
 //                        print("Key \(key) \nValue \(val)")
 //                        self.urls.append(val as! String)
@@ -60,6 +61,7 @@ class ImageCollectionViewController:UICollectionViewController,UICollectionViewD
                             self.downloadImage(url: url)
 //                            self.urls.append(val as! String)
                         }
+                    }
                     }
                     print(self.urls)
 //                    DispatchQueue.main.async() { () -> Void in
@@ -95,8 +97,10 @@ class ImageCollectionViewController:UICollectionViewController,UICollectionViewD
             guard let data = data, error == nil else { return }
             print(response?.suggestedFilename ?? url.lastPathComponent)
             print("Download Finished")
-            img = UIImage(data: data)!
-            self.imgs.append(img)
+
+                img = UIImage(data: data)!
+                self.imgs.append(img)
+            
             DispatchQueue.main.async() { () -> Void in
                 self.collectionView?.reloadData()
             }

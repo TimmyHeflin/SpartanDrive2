@@ -162,6 +162,7 @@
                     <connections>
                         <outlet property="imageName" destination="fti-D7-bh8" id="5Mc-qJ-auX"/>
                         <outlet property="imagedisplay" destination="Vcy-mF-qRZ" id="IIq-Wq-v7z"/>
+                        <segue destination="giO-Uj-f6v" kind="show" identifier="UploadSuccess" id="nHN-yA-suf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lNl-qB-aiW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -173,4 +174,7 @@
     <resources>
         <image name="upload_defaut_image.jpg" width="640" height="480"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="nHN-yA-suf"/>
+    </inferredMetricsTieBreakers>
 </document>
