@@ -208,7 +208,8 @@ class LoginViewController: UIViewController,GIDSignInUIDelegate{
     }
     
     private func handleSuccessfullSignIn(){
-        performSegue(withIdentifier: "TableView", sender: self)
+        performSegue(withIdentifier: "toHomeScreen", sender: self)
+        //performSegue(withIdentifier: "TableView", sender: self)
         //performSegue(withIdentifier: "postImage", sender: self)
 
     }

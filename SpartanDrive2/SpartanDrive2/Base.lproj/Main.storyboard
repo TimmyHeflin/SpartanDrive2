@@ -46,11 +46,12 @@
                     <connections>
                         <segue destination="WzM-co-q4T" kind="show" identifier="RegisterSegue" id="kMQ-ZL-IDl"/>
                         <segue destination="Qe6-AS-Qgv" kind="show" identifier="TableView" id="X1r-XP-74K"/>
+                        <segue destination="RF2-Sa-ltn" kind="show" identifier="toHomeScreen" id="7WN-wS-rOT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zqM-ee-aH6" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-79" y="-152"/>
+            <point key="canvasLocation" x="114" y="-63"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1bM-Q1-UFD">
@@ -67,6 +68,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bIj-43-jzT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1204" y="-87"/>
+        </scene>
+        <!--Main Menu View Controller-->
+        <scene sceneID="98D-tP-hKU">
+            <objects>
+                <tableViewController id="RF2-Sa-ltn" customClass="MainMenuViewController" customModule="SpartanDrive2" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4I3-wP-LdV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ex2-Sa-NcM">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ex2-Sa-NcM" id="FDg-Go-qI8">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDy-sN-5Wc" customClass="DropMenuButton" customModule="SpartanDrive2" customModuleProvider="target">
+                                            <rect key="frame" x="329" y="6" width="30" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                            <state key="normal" title="+"/>
+                                        </button>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RF2-Sa-ltn" id="2ja-a6-aOp"/>
+                            <outlet property="delegate" destination="RF2-Sa-ltn" id="Xi8-1g-CT6"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="dropDownOptions" destination="dDy-sN-5Wc" id="b5L-iI-EgZ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fwL-a0-Acm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1691.5" y="694.5"/>
         </scene>
         <!--Images-->
         <scene sceneID="5kM-5u-jsC">
@@ -168,13 +208,13 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lNl-qB-aiW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="O2O-sq-92T"/>
             </objects>
-            <point key="canvasLocation" x="2873" y="920"/>
+            <point key="canvasLocation" x="3743" y="-230"/>
         </scene>
     </scenes>
     <resources>
         <image name="upload_defaut_image.jpg" width="640" height="480"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nHN-yA-suf"/>
+        <segue reference="gP1-2M-4wG"/>
     </inferredMetricsTieBreakers>
 </document>

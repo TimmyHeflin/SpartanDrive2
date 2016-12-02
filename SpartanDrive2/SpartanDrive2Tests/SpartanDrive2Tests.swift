@@ -7,6 +7,7 @@
 //
 
 import XCTest
+
 @testable import SpartanDrive2
 
 class SpartanDrive2Tests: XCTestCase {
