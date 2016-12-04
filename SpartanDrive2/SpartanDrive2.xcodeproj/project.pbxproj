@@ -23,8 +23,11 @@
 		0443C34A1DE8DADC003FA2FA /* DriveImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0443C3491DE8DADC003FA2FA /* DriveImage.swift */; };
 		04533D9B1DEC0505004F2B77 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04533D9A1DEC0505004F2B77 /* Extensions.swift */; };
 		04533D9D1DEC2DEF004F2B77 /* PhotoViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04533D9C1DEC2DEF004F2B77 /* PhotoViewCollectionViewCell.swift */; };
-		3F370DCB1DF134BC00F34D5F /* DropMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F370DCA1DF134BC00F34D5F /* DropMenuButton.swift */; };
 		3F370DCD1DF13F6F00F34D5F /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F370DCC1DF13F6F00F34D5F /* MainMenuViewController.swift */; };
+		3FABF0AD1DF35D3A00CCAF44 /* FolderTemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FABF0AC1DF35D3A00CCAF44 /* FolderTemplateViewController.swift */; };
+		3FABF0AF1DF367D100CCAF44 /* FolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FABF0AE1DF367D100CCAF44 /* FolderCell.swift */; };
+		3FABF0B11DF367DE00CCAF44 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FABF0B01DF367DE00CCAF44 /* ImageCell.swift */; };
+		3FABF0B31DF367F000CCAF44 /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FABF0B21DF367F000CCAF44 /* TextCell.swift */; };
 		3FFB23FD1DF0031E00B3DDD2 /* PostPDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFB23FC1DF0031E00B3DDD2 /* PostPDFViewController.swift */; };
 		68D37EE8A8E129D29CF70339 /* Pods_SpartanDrive2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2ABEAF2AD26247D989CF4D8 /* Pods_SpartanDrive2UITests.framework */; };
 		A3924488D3BA654016E0F33A /* Pods_SpartanDrive2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E959DD9AB22A1C424A8AFD /* Pods_SpartanDrive2.framework */; };
@@ -74,8 +77,11 @@
 		04533D9C1DEC2DEF004F2B77 /* PhotoViewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewCollectionViewCell.swift; sourceTree = "<group>"; };
 		3763C756F2119BC8E5FB4A71 /* Pods-SpartanDrive2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanDrive2Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpartanDrive2Tests/Pods-SpartanDrive2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		39BA66DD40A30410E4821818 /* Pods-SpartanDrive2UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanDrive2UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpartanDrive2UITests/Pods-SpartanDrive2UITests.release.xcconfig"; sourceTree = "<group>"; };
-		3F370DCA1DF134BC00F34D5F /* DropMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropMenuButton.swift; sourceTree = "<group>"; };
 		3F370DCC1DF13F6F00F34D5F /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		3FABF0AC1DF35D3A00CCAF44 /* FolderTemplateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderTemplateViewController.swift; sourceTree = "<group>"; };
+		3FABF0AE1DF367D100CCAF44 /* FolderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderCell.swift; sourceTree = "<group>"; };
+		3FABF0B01DF367DE00CCAF44 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		3FABF0B21DF367F000CCAF44 /* TextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
 		3FFB23FC1DF0031E00B3DDD2 /* PostPDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostPDFViewController.swift; sourceTree = "<group>"; };
 		99B71864AF0B071F255C2AF9 /* Pods-SpartanDrive2UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanDrive2UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpartanDrive2UITests/Pods-SpartanDrive2UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A29742442B05E9DB555A0675 /* Pods_SpartanDrive2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpartanDrive2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +147,7 @@
 			children = (
 				04533D991DEC04F7004F2B77 /* Helpers */,
 				0443C3421DE507AE003FA2FA /* SpartanDrive2.entitlements */,
+				3FABF0AB1DF3582E00CCAF44 /* DropDown */,
 				0443C33F1DE505D8003FA2FA /* images */,
 				0443C3361DE4BCFC003FA2FA /* Models */,
 				0443C3341DE4BA63003FA2FA /* GoogleService-Info.plist */,
@@ -183,7 +190,7 @@
 				0443C3431DE5086F003FA2FA /* PostImageViewController.swift */,
 				3F370DCC1DF13F6F00F34D5F /* MainMenuViewController.swift */,
 				0443C3451DE8D636003FA2FA /* ImageCollectionViewController.swift */,
-				3F370DCA1DF134BC00F34D5F /* DropMenuButton.swift */,
+				3FABF0AC1DF35D3A00CCAF44 /* FolderTemplateViewController.swift */,
 			);
 			name = Controllers;
 			path = ..;
@@ -209,8 +216,18 @@
 			isa = PBXGroup;
 			children = (
 				04533D9A1DEC0505004F2B77 /* Extensions.swift */,
+				3FABF0AE1DF367D100CCAF44 /* FolderCell.swift */,
+				3FABF0B01DF367DE00CCAF44 /* ImageCell.swift */,
+				3FABF0B21DF367F000CCAF44 /* TextCell.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		3FABF0AB1DF3582E00CCAF44 /* DropDown */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DropDown;
 			sourceTree = "<group>";
 		};
 		9611B4FCA1E3CDE0B558DE8A /* Frameworks */ = {
@@ -527,14 +544,17 @@
 			files = (
 				3F370DCD1DF13F6F00F34D5F /* MainMenuViewController.swift in Sources */,
 				04533D9D1DEC2DEF004F2B77 /* PhotoViewCollectionViewCell.swift in Sources */,
+				3FABF0AF1DF367D100CCAF44 /* FolderCell.swift in Sources */,
 				0443C34A1DE8DADC003FA2FA /* DriveImage.swift in Sources */,
 				0443C3461DE8D636003FA2FA /* ImageCollectionViewController.swift in Sources */,
+				3FABF0B11DF367DE00CCAF44 /* ImageCell.swift in Sources */,
+				3FABF0AD1DF35D3A00CCAF44 /* FolderTemplateViewController.swift in Sources */,
 				3FFB23FD1DF0031E00B3DDD2 /* PostPDFViewController.swift in Sources */,
 				0443C3381DE4BE16003FA2FA /* LoginViewController.swift in Sources */,
 				04533D9B1DEC0505004F2B77 /* Extensions.swift in Sources */,
+				3FABF0B31DF367F000CCAF44 /* TextCell.swift in Sources */,
 				0443C3331DE4AB8D003FA2FA /* RegisterViewController.swift in Sources */,
 				0443C3441DE5086F003FA2FA /* PostImageViewController.swift in Sources */,
-				3F370DCB1DF134BC00F34D5F /* DropMenuButton.swift in Sources */,
 				0443C3061DE4A8D7003FA2FA /* ViewController.swift in Sources */,
 				0443C3041DE4A8D7003FA2FA /* AppDelegate.swift in Sources */,
 			);

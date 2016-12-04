@@ -17,21 +17,59 @@ class MainMenuViewController: UITableViewController {
     let storageref = FIRStorage.storage().reference(forURL: "gs://spartan-storage.appspot.com")
     let options = ["New Folder", "New Image", "New Text", "Share..."]
     
-    @IBOutlet weak var dropDownOptions: DropMenuButton!
+    
+    //@IBOutlet weak var dropDownOptions: DropMenuButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dropDownOptions.initMenu(options,
-            actions: [({ () -> (Void) in
-                print("new folder stuff")
-            }), ({ () -> (Void) in
-                print("new image stuff")
-            }), ({ () -> (Void) in
-                print("new text stuff")
-            }), ({ () -> (Void) in
-                print("share that stuff")
-            })])
+        print(getInfoFromFirebase())
+        
+        
+    }
+    
+    func getInfoFromFirebase() -> NSDictionary? {
+        var theValue: NSDictionary?
+        if let user = FIRAuth.auth()?.currentUser{
+            if user != nil{
+                let urls = self.databaseref.child("users").child(user.uid).child("homeFolder").observeSingleEvent(of: .value, with: { (snapshot) in
+                    
+                    let value = snapshot.value as? NSDictionary
+                    
+                    if value != nil {
+                        //print(snapshot.value as? NSDictionary)
+                        theValue = value
+                    }
+                    else {
+                        self.createTheInitialFolder()
+                    }
+
+//                    if value != nil {
+//                        return value
+//                    }
+
+                }) { (error) in
+                    print(error.localizedDescription)
+                    
+                }
+            }
+        }
+        
+        return theValue
+    }
+    
+    func createTheInitialFolder() {
+        
+        let firstFolder:String = "homeFolder"
+        let userref = self.databaseref.child("users")
+        
+        if let user = FIRAuth.auth()?.currentUser {
+            let folder = userref.child(user.uid)
+            
+            folder.child(firstFolder).child("isItShared").setValue(false)
+        }
+        
+        print("here")
         
         
     }
