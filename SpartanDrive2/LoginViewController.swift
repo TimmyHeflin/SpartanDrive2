@@ -9,7 +9,45 @@
 import UIKit
 import Firebase
 import GoogleSignIn
-class LoginViewController: UIViewController,GIDSignInUIDelegate{
+
+var filePath: FIRDatabaseReference!
+var filePathArr: Array<Any>!
+var nextFilePath: String!
+
+
+//creates a new file path for whether the user transitions to a new TableView or goes back one TableView.
+//To delete the last section of the path, have nextPath equal nil
+
+func createFilePath(path: FIRDatabaseReference, pathArr: Array<Any>, nextPath: String) -> FIRDatabaseReference! {
+    
+    var newPathArr = pathArr
+    var newPath = path
+    
+    if nextPath != nil {
+        
+        newPathArr.append(nextPath)
+        
+        for paths in newPathArr {
+            newPath = newPath.child(paths as! String)
+        }
+        
+    }
+    
+    else {
+        
+        newPathArr.remove(at: newPathArr.count - 1)
+        
+        for paths in newPathArr {
+            newPath = newPath.child(paths as! String)
+        }
+        
+    }
+    
+    return newPath
+    
+}
+
+class LoginViewController: UIViewController, GIDSignInUIDelegate{
 
     
     
@@ -203,6 +241,12 @@ class LoginViewController: UIViewController,GIDSignInUIDelegate{
             
             //successfully logged in our user
             self.dismiss(animated: true, completion: nil)
+            nextFilePath = "users"
+            
+            filePath = FIRDatabase.database().reference()
+            
+            filePath = createFilePath(path: filePath, pathArr: filePathArr, nextPath: nextFilePath)
+            
             self.handleSuccessfullSignIn()
         })
     }
@@ -236,6 +280,7 @@ class LoginViewController: UIViewController,GIDSignInUIDelegate{
      
 //        performSegue(withIdentifier: "RegisterSegue", sender: self)
     }
+    
     @objc private func handleRegister(){
         performSegue(withIdentifier: "RegisterSegue", sender: self)
         

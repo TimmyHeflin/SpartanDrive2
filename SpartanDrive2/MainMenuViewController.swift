@@ -15,7 +15,12 @@ class MainMenuViewController: UITableViewController {
 
     let databaseref = FIRDatabase.database().reference()
     let storageref = FIRStorage.storage().reference(forURL: "gs://spartan-storage.appspot.com")
+    let user = FIRAuth.auth()?.currentUser
     let options = ["New Folder", "New Image", "New Text", "Share..."]
+    
+    @IBOutlet weak var folderCell: FolderCell!
+    @IBOutlet weak var imageCell: ImageCell!
+    @IBOutlet weak var textCell: TextCell!
     
     
     //@IBOutlet weak var dropDownOptions: DropMenuButton!
@@ -23,8 +28,13 @@ class MainMenuViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(getInfoFromFirebase())
+        loadBasedOnFileDirectory()
         
+        if nextFilePath == "users" {
+            filePath = filePath.child((user?.uid)!)
+        }
+        
+        print(getInfoFromFirebase())
         
     }
     
@@ -71,7 +81,26 @@ class MainMenuViewController: UITableViewController {
         
         print("here")
         
+    }
+    
+    func loadBasedOnFileDirectory() {
         
+    }
+
+    
+    func clickOnFolder(folderCell: FolderCell) {
+        nextFilePath = folderCell.folderName
+        filePath = filePath.child(nextFilePath)
+    }
+    
+    func clickOnImage(imageCell: ImageCell) {
+        nextFilePath = imageCell.imageName
+        filePath = filePath.child(nextFilePath)
+    }
+    
+    func clickOnText(textCell: TextCell) {
+        nextFilePath = textCell.textName
+        filePath = filePath.child(nextFilePath)
     }
 
     
