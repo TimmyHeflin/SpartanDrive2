@@ -46,7 +46,7 @@
                     <connections>
                         <segue destination="WzM-co-q4T" kind="show" identifier="RegisterSegue" id="kMQ-ZL-IDl"/>
                         <segue destination="Qe6-AS-Qgv" kind="show" identifier="TableView" id="X1r-XP-74K"/>
-                        <segue destination="RF2-Sa-ltn" kind="show" identifier="toHomeScreen" id="7WN-wS-rOT"/>
+                        <segue destination="4u3-EH-fzx" kind="show" identifier="toHome" id="Lj9-SG-yHT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zqM-ee-aH6" sceneMemberID="firstResponder"/>
@@ -57,13 +57,10 @@
         <scene sceneID="1bM-Q1-UFD">
             <objects>
                 <navigationController id="Qe6-AS-Qgv" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jX5-CK-96j">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jX5-CK-96j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="giO-Uj-f6v" kind="relationship" relationship="rootViewController" id="gP1-2M-4wG"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bIj-43-jzT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -169,10 +166,17 @@
                             <outlet property="delegate" destination="RF2-Sa-ltn" id="Xi8-1g-CT6"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="hBv-6I-Z2s">
+                        <barButtonItem key="leftBarButtonItem" title="🔙" id="rYF-zv-viA">
+                            <connections>
+                                <action selector="backButton:" destination="RF2-Sa-ltn" id="buQ-yt-DRP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fwL-a0-Acm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1940" y="697"/>
+            <point key="canvasLocation" x="2879.1999999999998" y="696.7016491754124"/>
         </scene>
         <!--Images-->
         <scene sceneID="5kM-5u-jsC">
@@ -276,11 +280,26 @@
             </objects>
             <point key="canvasLocation" x="3743" y="-230"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SgL-Sa-6jO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4u3-EH-fzx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dzg-kH-e5T">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RF2-Sa-ltn" kind="relationship" relationship="rootViewController" id="URT-zo-koP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rWs-3g-9Fb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1940" y="696.7016491754124"/>
+        </scene>
     </scenes>
     <resources>
         <image name="upload_defaut_image.jpg" width="640" height="480"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="nHN-yA-suf"/>
-    </inferredMetricsTieBreakers>
 </document>

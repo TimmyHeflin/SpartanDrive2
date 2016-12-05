@@ -20,6 +20,22 @@ class FolderCell:UITableViewCell{
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var folderImage: UILabel!
     
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupViews()
+    }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    let nameLabel: UILabel = {
+        
+        return UILabel()
+    }()
+    
+    func setupViews() {
+        addSubview(nameLabel)
+    }
     
 }

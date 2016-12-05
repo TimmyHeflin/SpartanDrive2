@@ -48,8 +48,6 @@ func createFilePath(path: FIRDatabaseReference, pathArr: Array<Any>, nextPath: S
 }
 
 class LoginViewController: UIViewController, GIDSignInUIDelegate{
-
-    
     
     let inputsContainerView: UIView = {
         let view = UIView()
@@ -153,6 +151,10 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate{
         setupLoginRegisterButton()
         setupRegisterButton()
         setupGoogleButtons()
+        
+        filePath = FIRDatabase.database().reference()
+        filePathArr = []
+        nextFilePath = ""
     }
 
     override func didReceiveMemoryWarning() {
@@ -241,19 +243,21 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate{
             
             //successfully logged in our user
             self.dismiss(animated: true, completion: nil)
-            nextFilePath = "users"
-            
-            filePath = FIRDatabase.database().reference()
-            
-            filePath = createFilePath(path: filePath, pathArr: filePathArr, nextPath: nextFilePath)
+//            filePathArr.append("users")
+//            nextFilePath = FIRAuth.auth()?.currentUser?.uid
+//            print("the next file path")
+//            print(nextFilePath)
+//            filePath = FIRDatabase.database().reference()
+//            
+//            filePath = createFilePath(path: filePath, pathArr: filePathArr, nextPath: nextFilePath)
             
             self.handleSuccessfullSignIn()
         })
     }
     
     private func handleSuccessfullSignIn(){
-        performSegue(withIdentifier: "toHomeScreen", sender: self)
         //performSegue(withIdentifier: "TableView", sender: self)
+        performSegue(withIdentifier: "toHome", sender: self)
         //performSegue(withIdentifier: "postImage", sender: self)
 
     }

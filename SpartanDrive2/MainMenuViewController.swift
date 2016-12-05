@@ -22,27 +22,48 @@ class MainMenuViewController: UITableViewController {
     @IBOutlet weak var imageCell: ImageCell!
     @IBOutlet weak var textCell: TextCell!
     
+    @IBAction func backButton(_ sender: UIBarButtonItem) {
+        var nilString: String? = nil
+        
+        
+    }
     
     //@IBOutlet weak var dropDownOptions: DropMenuButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadBasedOnFileDirectory()
+        navigationItem.title = "stuff"
         
-        if nextFilePath == "users" {
-            filePath = filePath.child((user?.uid)!)
-        }
+        tableView.register(FolderCell(), forCellReuseIdentifier: "folderCell")
         
-        print(getInfoFromFirebase())
+        
+        
+        folderCell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("tapRecognized:")))
+        imageCell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("tapRecognized:")))
+        textCell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("tapRecognized:")))
+        
+        
+        
+        //loadBasedOnFileDirectory()
+        print("getting from firebase")
+        print(getInfoFromFirebase(folderPath: filePath))
         
     }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return filePathArr.count
+    }
     
-    func getInfoFromFirebase() -> NSDictionary? {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        return tableView.dequeueReusableCell(withIdentifier: "folderCell", for: indexPath as IndexPath)
+    }
+    
+    func getInfoFromFirebase(folderPath: FIRDatabaseReference) -> NSDictionary? {
         var theValue: NSDictionary?
         if let user = FIRAuth.auth()?.currentUser{
             if user != nil{
-                let urls = self.databaseref.child("users").child(user.uid).child("homeFolder").observeSingleEvent(of: .value, with: { (snapshot) in
+                let urls = folderPath.observeSingleEvent(of: .value, with: { (snapshot) in
                     
                     let value = snapshot.value as? NSDictionary
                     
@@ -83,10 +104,13 @@ class MainMenuViewController: UITableViewController {
         
     }
     
-    func loadBasedOnFileDirectory() {
+    func loadBasedOnFileDirectory(path: FIRDatabaseReference, info: NSDictionary?) {
         
     }
 
+    func tapRecognized(sender: UITapGestureRecognizer) {
+        print("it can see it")
+    }
     
     func clickOnFolder(folderCell: FolderCell) {
         nextFilePath = folderCell.folderName
