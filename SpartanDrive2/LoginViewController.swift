@@ -13,6 +13,7 @@ import GoogleSignIn
 var filePath: FIRDatabaseReference!
 var filePathArr: Array<Any>!
 var nextFilePath: String!
+var usersNameOnlyUsedInLoginViewController: String!
 
 
 //creates a new file path for whether the user transitions to a new TableView or goes back one TableView.
@@ -243,19 +244,55 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate{
             
             //successfully logged in our user
             self.dismiss(animated: true, completion: nil)
-//            filePathArr.append("users")
-//            nextFilePath = FIRAuth.auth()?.currentUser?.uid
-//            print("the next file path")
-//            print(nextFilePath)
-//            filePath = FIRDatabase.database().reference()
-//            
-//            filePath = createFilePath(path: filePath, pathArr: filePathArr, nextPath: nextFilePath)
+            filePathArr.append("users")
+            nextFilePath = FIRAuth.auth()?.currentUser?.uid
+            print("the next file path")
+            print(nextFilePath)
+            filePath = FIRDatabase.database().reference()
+            
+            filePath = createFilePath(path: filePath, pathArr: filePathArr, nextPath: nextFilePath)
+            
+            usersNameOnlyUsedInLoginViewController = "friend!"
+            
+            self.getNameValue()
             
             self.handleSuccessfullSignIn()
         })
     }
     
+    func getNameValue(){
+
+        var semaphore = DispatchSemaphore(value:0)
+        
+        filePath.child("name").observeSingleEvent(of: .value, with:
+            { (snapshot) in
+                let value = snapshot.value as? String
+                
+                print("init: " + value!)
+                
+                if value != nil {
+                    usersNameOnlyUsedInLoginViewController = value!
+                    nextFilePath = "Welcome, " + usersNameOnlyUsedInLoginViewController
+                    semaphore.signal()
+                }
+                    
+                else {
+                    usersNameOnlyUsedInLoginViewController = "friend!"
+                    nextFilePath = "Welcome, " + usersNameOnlyUsedInLoginViewController
+                }
+        })
+        print("still messing up?")
+        
+        let timeout = DispatchTime.now() + DispatchTimeInterval.seconds(1)
+        
+        if semaphore.wait(timeout: timeout) == DispatchTimeoutResult.timedOut {
+            print("test timed out")
+        }
+        
+    }
+    
     private func handleSuccessfullSignIn(){
+        
         //performSegue(withIdentifier: "TableView", sender: self)
         performSegue(withIdentifier: "toHome", sender: self)
         //performSegue(withIdentifier: "postImage", sender: self)

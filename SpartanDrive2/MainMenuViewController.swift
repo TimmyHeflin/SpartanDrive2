@@ -24,8 +24,6 @@ class MainMenuViewController: UITableViewController {
     
     @IBAction func backButton(_ sender: UIBarButtonItem) {
         var nilString: String? = nil
-        
-        
     }
     
     //@IBOutlet weak var dropDownOptions: DropMenuButton!
@@ -33,15 +31,15 @@ class MainMenuViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "stuff"
+        navigationItem.title = nextFilePath
         
-        tableView.register(FolderCell(), forCellReuseIdentifier: "folderCell")
+        tableView.register(FolderCell.self, forCellReuseIdentifier: "folderCell")
+        tableView.register(ImageCell.self, forCellReuseIdentifier: "imageCell")
+        tableView.register(TextCell.self, forCellReuseIdentifier: "textCell")
         
-        
-        
-        folderCell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("tapRecognized:")))
-        imageCell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("tapRecognized:")))
-        textCell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("tapRecognized:")))
+//        folderCell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("tapRecognized:")))
+//        imageCell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("tapRecognized:")))
+//        textCell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("tapRecognized:")))
         
         
         
@@ -52,10 +50,10 @@ class MainMenuViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filePathArr.count
+        return 5
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return tableView.dequeueReusableCell(withIdentifier: "folderCell", for: indexPath as IndexPath)
     }
     
@@ -127,6 +125,5 @@ class MainMenuViewController: UITableViewController {
         filePath = filePath.child(nextFilePath)
     }
 
-    
     
 }
