@@ -13,6 +13,9 @@ import FirebaseStorage
 
 class MainMenuViewController: UITableViewController {
 
+    let exampleArray = ["folder", "image", "folder", "text", "image", "image", "text"]
+    
+    
     let databaseref = FIRDatabase.database().reference()
     let storageref = FIRStorage.storage().reference(forURL: "gs://spartan-storage.appspot.com")
     let user = FIRAuth.auth()?.currentUser
@@ -30,6 +33,7 @@ class MainMenuViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //init(UITableViewStyle())
         
         navigationItem.title = nextFilePath
         
@@ -41,64 +45,51 @@ class MainMenuViewController: UITableViewController {
 //        imageCell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("tapRecognized:")))
 //        textCell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("tapRecognized:")))
         
-        
-        
         //loadBasedOnFileDirectory()
-        print("getting from firebase")
-        print(getInfoFromFirebase(folderPath: filePath))
+        //print("getting from firebase")
+        //getInfoFromFirebase(folderPath: filePath)
+        //print(dataFromDatabase!)
         
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return exampleArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: "folderCell", for: indexPath as IndexPath)
-    }
-    
-    func getInfoFromFirebase(folderPath: FIRDatabaseReference) -> NSDictionary? {
-        var theValue: NSDictionary?
-        if let user = FIRAuth.auth()?.currentUser{
-            if user != nil{
-                let urls = folderPath.observeSingleEvent(of: .value, with: { (snapshot) in
-                    
-                    let value = snapshot.value as? NSDictionary
-                    
-                    if value != nil {
-                        //print(snapshot.value as? NSDictionary)
-                        theValue = value
-                    }
-                    else {
-                        self.createTheInitialFolder()
-                    }
-
-//                    if value != nil {
-//                        return value
-//                    }
-
-                }) { (error) in
-                    print(error.localizedDescription)
-                    
-                }
-            }
+        if exampleArray[indexPath.row] == "folder"{
+            let aFolderCell = tableView.dequeueReusableCell(withIdentifier: "folderCell", for: indexPath as IndexPath) as! FolderCell
+            aFolderCell.mainMenuViewController = self
+            return aFolderCell
         }
         
-        return theValue
-    }
-    
-    func createTheInitialFolder() {
-        
-        let firstFolder:String = "homeFolder"
-        let userref = self.databaseref.child("users")
-        
-        if let user = FIRAuth.auth()?.currentUser {
-            let folder = userref.child(user.uid)
-            
-            folder.child(firstFolder).child("isItShared").setValue(false)
+        else if exampleArray[indexPath.row] == "image"{
+            let anImageCell = tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath as IndexPath) as! ImageCell
+            anImageCell.mainMenuViewController = self
+            return anImageCell
         }
         
-        print("here")
+        else{
+            let aTextCell = tableView.dequeueReusableCell(withIdentifier: "textCell", for: indexPath as IndexPath) as! TextCell
+            aTextCell.mainMenuViewController = self
+            return aTextCell
+        }
+        
+        
+        //return tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath as IndexPath)
+    }
+    
+    
+    
+    
+    func deleteCell(cell: UITableViewCell){
+        
+        if let deletetionIndexPath = tableView.indexPath(for: cell) {
+            //items.removeAtIndex(deletionIndexPath.row)
+            //tableView.deleteRows(at: deletetionIndexPath, with: .automatic)
+        }
+        
+        
         
     }
     
@@ -110,20 +101,67 @@ class MainMenuViewController: UITableViewController {
         print("it can see it")
     }
     
-    func clickOnFolder(folderCell: FolderCell) {
-        nextFilePath = folderCell.folderName
+    func clickOnItem(anyCell: Any?) {
+        nextFilePath = (anyCell! as AnyObject).name
         filePath = filePath.child(nextFilePath)
     }
     
-    func clickOnImage(imageCell: ImageCell) {
-        nextFilePath = imageCell.imageName
-        filePath = filePath.child(nextFilePath)
+    func insert(){
+        //append to the main array
+        
+        //forRow array.count - 1
+        //        let insertionIndexPath = NSIndexPath(forRow: 4, inSection: 0)
+        //
+        //        tableView.insertRows(at: insertionIndexPath, with: UITableViewRowAnimation)
+        //
+        //        tableView.reloadData()
     }
     
-    func clickOnText(textCell: TextCell) {
-        nextFilePath = textCell.textName
-        filePath = filePath.child(nextFilePath)
+    func insertBatch(){
+        //        var indexPaths = [NSIndexPath]()
+        //        for i in array.count...array.count + 5 {
+        //            array.append("new item")
+        //            indexPaths.append(NSIndexPath(forRow: i, inSection: 0))
+        //        }
+        //
+        //        var bottomHalfIndexPaths = [NSIndexPath]()
+        //        for _ in 0...indexPaths.count / 2 - 1 {
+        //            bottomHalfIndexPaths.append(indexPaths.removeLast())
+        //        }
+        //
+        //        tableView.beginUpdates()
+        //
+        //        tableView.insertRows(at: indexPaths, with: .right)
+        //        tableView.insertRows(at: indexPaths, with: .left)
+        //        
+        //        tableView.endUpdates()
     }
+    
+    
+    //    func createTheInitialFolder() {
+    //
+    //        let firstFolder:String = "homeFolder"
+    //        let userref = self.databaseref.child("users")
+    //
+    //        if let user = FIRAuth.auth()?.currentUser {
+    //            let folder = userref.child(user.uid)
+    //
+    //            folder.child(firstFolder).child("isItShared").setValue(false)
+    //        }
+    //
+    //        print("here")
+    //        
+    //    }
+
+//    func clickOnImage(imageCell: ImageCell) {
+//        nextFilePath = imageCell.imageName
+//        filePath = filePath.child(nextFilePath)
+//    }
+//    
+//    func clickOnText(textCell: TextCell) {
+//        nextFilePath = textCell.textName
+//        filePath = filePath.child(nextFilePath)
+//    }
 
     
 }

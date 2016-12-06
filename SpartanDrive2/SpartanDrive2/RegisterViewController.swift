@@ -187,7 +187,7 @@ class RegisterViewController: UIViewController {
             //successfully authenticated user
             let ref = FIRDatabase.database().reference(fromURL: "https://spartan-storage.firebaseio.com/")
             let usersReference = ref.child("users").child(uid)
-            let values = ["name": name, "email": email]
+            let values = ["name": name, "email": email, "homeFolder": ["dummy": "data"]] as [String : Any]
             usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
                 
                 if err != nil {

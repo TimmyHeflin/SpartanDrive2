@@ -14,6 +14,7 @@ var filePath: FIRDatabaseReference!
 var filePathArr: Array<Any>!
 var nextFilePath: String!
 var usersNameOnlyUsedInLoginViewController: String!
+var dataFromDatabase: NSDictionary!
 
 
 //creates a new file path for whether the user transitions to a new TableView or goes back one TableView.
@@ -256,13 +257,17 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate{
             
             self.getNameValue()
             
+            filePath = filePath.child("homeFolder")
+            
+            self.getInfoFromFirebase(folderPath: filePath)
+            
             self.handleSuccessfullSignIn()
         })
     }
     
     func getNameValue(){
 
-        var semaphore = DispatchSemaphore(value:0)
+        let semaphore = DispatchSemaphore(value:0)
         
         filePath.child("name").observeSingleEvent(of: .value, with:
             { (snapshot) in
@@ -289,6 +294,39 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate{
             print("test timed out")
         }
         
+    }
+    
+    func getInfoFromFirebase(folderPath: FIRDatabaseReference) {
+        let semaphore = DispatchSemaphore(value:0)
+        
+        print("the current folder path" + folderPath.description())
+        
+        
+        
+        folderPath.observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            let value = snapshot.value as? NSDictionary
+            
+            if value != nil {
+                //print(snapshot.value as? NSDictionary)
+                dataFromDatabase = value!
+                print("after setting theValue: " + (dataFromDatabase?.description)!)
+                semaphore.signal()
+            }
+            else {
+                print("went into else")
+                semaphore.signal()
+            }
+            
+        })
+        
+        let timeout = DispatchTime.now() + DispatchTimeInterval.seconds(1)
+        
+        if semaphore.wait(timeout: timeout) == DispatchTimeoutResult.timedOut {
+            print("test timed out")
+        }
+        
+        print("getDescription is done")
     }
     
     private func handleSuccessfullSignIn(){
