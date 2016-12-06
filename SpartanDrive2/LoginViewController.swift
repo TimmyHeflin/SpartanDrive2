@@ -261,7 +261,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate{
             
             self.getInfoFromFirebase(folderPath: filePath)
             
-            self.handleSuccessfullSignIn()
+            
         })
     }
     
@@ -311,6 +311,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate{
                 //print(snapshot.value as? NSDictionary)
                 dataFromDatabase = value!
                 print("after setting theValue: " + (dataFromDatabase?.description)!)
+                self.handleSuccessfullSignIn()
                 semaphore.signal()
             }
             else {

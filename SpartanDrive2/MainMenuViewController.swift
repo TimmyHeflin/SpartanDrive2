@@ -30,7 +30,6 @@ class MainMenuViewController: UITableViewController {
     }
     
     //@IBOutlet weak var dropDownOptions: DropMenuButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         //init(UITableViewStyle())
@@ -48,7 +47,7 @@ class MainMenuViewController: UITableViewController {
         //loadBasedOnFileDirectory()
         //print("getting from firebase")
         //getInfoFromFirebase(folderPath: filePath)
-        //print(dataFromDatabase!)
+        print(dataFromDatabase!)
         
     }
 
