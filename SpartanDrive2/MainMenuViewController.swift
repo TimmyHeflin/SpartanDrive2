@@ -13,28 +13,34 @@ import FirebaseStorage
 
 class MainMenuViewController: UITableViewController {
 
+    //example of cells being produced
     let exampleArray = ["folder", "image", "folder", "text", "image", "image", "text"]
+    var trueArray = [String:String]()
     
-    
+    //references
     let databaseref = FIRDatabase.database().reference()
     let storageref = FIRStorage.storage().reference(forURL: "gs://spartan-storage.appspot.com")
     let user = FIRAuth.auth()?.currentUser
+    
+    //options for top right button
     let options = ["New Folder", "New Image", "New Text", "Share..."]
     
+    //the UITableViewCells
     @IBOutlet weak var folderCell: FolderCell!
     @IBOutlet weak var imageCell: ImageCell!
     @IBOutlet weak var textCell: TextCell!
     
+    //BackButton functionality
     @IBAction func backButton(_ sender: UIBarButtonItem) {
         var nilString: String? = nil
     }
     
-    //@IBOutlet weak var dropDownOptions: DropMenuButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //init(UITableViewStyle())
         
         navigationItem.title = nextFilePath
+        
+        self.fillTrueArrayWithDatabaseNames(theGetData: dataFromDatabase)
         
         tableView.register(FolderCell.self, forCellReuseIdentifier: "folderCell")
         tableView.register(ImageCell.self, forCellReuseIdentifier: "imageCell")
@@ -49,35 +55,56 @@ class MainMenuViewController: UITableViewController {
         //getInfoFromFirebase(folderPath: filePath)
         print(dataFromDatabase!)
         
+        
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return exampleArray.count
+        return trueArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if exampleArray[indexPath.row] == "folder"{
+        
+        if trueArray["f" + String(indexPath.row)] != nil {
             let aFolderCell = tableView.dequeueReusableCell(withIdentifier: "folderCell", for: indexPath as IndexPath) as! FolderCell
             aFolderCell.mainMenuViewController = self
+            aFolderCell.folderNameLabel.text! = trueArray["f" + String(indexPath.row)]!
+            
             return aFolderCell
         }
         
-        else if exampleArray[indexPath.row] == "image"{
+        else if trueArray["i" + String(indexPath.row)] != nil {
             let anImageCell = tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath as IndexPath) as! ImageCell
             anImageCell.mainMenuViewController = self
+            anImageCell.imageNameLabel.text! = trueArray["i" + String(indexPath.row)]!
+            
             return anImageCell
         }
         
-        else{
-            let aTextCell = tableView.dequeueReusableCell(withIdentifier: "textCell", for: indexPath as IndexPath) as! TextCell
+        else {
+            let aTextCell = tableView.dequeueReusableCell(withIdentifier: "textCell", for: indexPath as     IndexPath) as! TextCell
             aTextCell.mainMenuViewController = self
+            aTextCell.textNameLabel.text! = trueArray["t" + String(indexPath.row)]!
+            
             return aTextCell
         }
         
-        
-        //return tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath as IndexPath)
+//        switch exampleArray[indexPath.row]{
+//        case "folder":
+//            
+//        
+//        case "image":
+//            
+//        
+//        case "text":
+//            
+//            
+//        default:
+//            let dummy = UITableViewCell()
+//            //dummy.heightAnchor = 0
+//            return dummy
+//        }
     }
-    
+  
     
     
     
@@ -89,6 +116,58 @@ class MainMenuViewController: UITableViewController {
         }
         
         
+        
+    }
+    
+    func fillTrueArrayWithDatabaseNames(theGetData: NSDictionary) {
+        
+        trueArray = [:]
+        var indexCount: Int = 0
+        
+        for key in theGetData {
+            
+            if key.value is String {
+                
+                if key.key as? String != "dummy" {
+                    
+                    if (key.value as? String)!.characters.first != "i" {
+                        
+                        //text case
+                        print("t" + String(indexCount))
+                        trueArray["t" + String(indexCount)] = key.key as? String
+                        indexCount += 1
+                    }
+                    
+                    else{
+                        
+                        //image case
+                        print("i" + String(indexCount))
+                        trueArray["i" + String(indexCount)] = key.key as? String
+                        indexCount += 1
+                        
+                    }
+
+                }
+                    
+                else{
+                    //dummy data case
+                }
+                
+            }
+                
+            else {
+                
+                //folder case
+                print("f" + String(indexCount))
+                trueArray["f" + String(indexCount)] = key.key as? String
+                indexCount += 1
+            }
+            
+            
+            
+        }
+        
+        print(trueArray)
         
     }
     

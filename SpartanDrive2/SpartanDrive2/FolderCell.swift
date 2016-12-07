@@ -77,7 +77,7 @@ class FolderCell:UITableViewCell{
         //this is the horizontal constraint for all views
         //withVisualFormat shows their positions in the cell
         //views is the array of views in the cell
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[v0]-[v1]-275-[v2]-8-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": folderImageLabel, "v1": folderNameLabel, "v2": delButton]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[v0]-[v1]-250-[v2]-25-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": folderImageLabel, "v1": folderNameLabel, "v2": delButton]))
         
         //this is vertical constraint for the image
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": folderImageLabel]))
