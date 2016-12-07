@@ -46,9 +46,9 @@ class MainMenuViewController: UITableViewController {
         tableView.register(ImageCell.self, forCellReuseIdentifier: "imageCell")
         tableView.register(TextCell.self, forCellReuseIdentifier: "textCell")
         
-//        folderCell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("tapRecognized:")))
-//        imageCell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("tapRecognized:")))
-//        textCell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("tapRecognized:")))
+//        folderCell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("tapFolderCell:")))
+//        imageCell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("tapImageCell:")))
+//        textCell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("tapTextCell:")))
         
         //loadBasedOnFileDirectory()
         //print("getting from firebase")
@@ -65,58 +65,45 @@ class MainMenuViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if trueArray["f" + String(indexPath.row)] != nil {
+            
+            let tap = UITapGestureRecognizer(target: self, action: Selector("tapFolderCell"))
+            tap.numberOfTapsRequired = 1
+            
             let aFolderCell = tableView.dequeueReusableCell(withIdentifier: "folderCell", for: indexPath as IndexPath) as! FolderCell
+        
             aFolderCell.mainMenuViewController = self
             aFolderCell.folderNameLabel.text! = trueArray["f" + String(indexPath.row)]!
+            aFolderCell.addGestureRecognizer(tap)
             
             return aFolderCell
         }
         
         else if trueArray["i" + String(indexPath.row)] != nil {
+            
+            let tap = UITapGestureRecognizer(target: self, action: Selector("tapImageCell"))
+            tap.numberOfTapsRequired = 1
+            
             let anImageCell = tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath as IndexPath) as! ImageCell
+            
             anImageCell.mainMenuViewController = self
             anImageCell.imageNameLabel.text! = trueArray["i" + String(indexPath.row)]!
+            anImageCell.addGestureRecognizer(tap)
             
             return anImageCell
         }
         
         else {
+            let tap = UITapGestureRecognizer(target: self, action: Selector("tapTextCell"))
+            tap.numberOfTapsRequired = 1
+            
             let aTextCell = tableView.dequeueReusableCell(withIdentifier: "textCell", for: indexPath as     IndexPath) as! TextCell
             aTextCell.mainMenuViewController = self
             aTextCell.textNameLabel.text! = trueArray["t" + String(indexPath.row)]!
+            aTextCell.addGestureRecognizer(tap)
             
             return aTextCell
         }
-        
-//        switch exampleArray[indexPath.row]{
-//        case "folder":
-//            
-//        
-//        case "image":
-//            
-//        
-//        case "text":
-//            
-//            
-//        default:
-//            let dummy = UITableViewCell()
-//            //dummy.heightAnchor = 0
-//            return dummy
-//        }
-    }
-  
-    
-    
-    
-    func deleteCell(cell: UITableViewCell){
-        
-        if let deletetionIndexPath = tableView.indexPath(for: cell) {
-            //items.removeAtIndex(deletionIndexPath.row)
-            //tableView.deleteRows(at: deletetionIndexPath, with: .automatic)
-        }
-        
-        
-        
+
     }
     
     func fillTrueArrayWithDatabaseNames(theGetData: NSDictionary) {
@@ -163,8 +150,6 @@ class MainMenuViewController: UITableViewController {
                 indexCount += 1
             }
             
-            
-            
         }
         
         print(trueArray)
@@ -175,9 +160,27 @@ class MainMenuViewController: UITableViewController {
         
     }
 
-    func tapRecognized(sender: UITapGestureRecognizer) {
-        print("it can see it")
+    func tapFolderCell() {
+        print("folder")
     }
+    
+    func tapImageCell() {
+        print("image")
+    }
+
+    func tapTextCell() {
+        print("text")
+    }
+    
+    func deleteCell(cell: UITableViewCell){
+        
+        if let deletetionIndexPath = tableView.indexPath(for: cell) {
+            //items.removeAtIndex(deletionIndexPath.row)
+            //tableView.deleteRows(at: deletetionIndexPath, with: .automatic)
+        }
+
+    }
+
     
     func clickOnItem(anyCell: Any?) {
         nextFilePath = (anyCell! as AnyObject).name
