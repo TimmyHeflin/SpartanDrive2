@@ -27,11 +27,11 @@ class ImageCollectionViewController:UICollectionViewController,UICollectionViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView?.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        //collectionView?.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         
         collectionView?.backgroundColor = UIColor.white
         
-        getUserImage_URLS()
+        //getUserImage_URLS()
 
     }
     

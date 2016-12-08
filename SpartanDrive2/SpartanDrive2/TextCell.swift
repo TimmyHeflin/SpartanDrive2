@@ -15,7 +15,7 @@ class TextCell:UITableViewCell{
     
     var textName: String = ""
     var textPath: String = ""
-    var seguePath: String = ""
+    var id: String = ""
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var textImage: UILabel!

@@ -15,7 +15,7 @@ class FolderCell:UITableViewCell{
 
     var folderName: String = ""
     var folderPath: FIRDatabaseReference = FIRDatabase.database().reference()
-    var seguePath: String = ""
+    var id: String = ""
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var folderImage: UILabel!

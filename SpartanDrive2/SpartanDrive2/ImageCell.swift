@@ -15,7 +15,7 @@ class ImageCell:UITableViewCell{
     
     var imageName: String = ""
     var imagePath: String = ""
-    var seguePath: String = ""
+    var id: String = ""
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var imageImage: UILabel!

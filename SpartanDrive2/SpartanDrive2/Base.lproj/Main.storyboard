@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11761" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PYp-Eo-cbF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PYp-Eo-cbF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -172,11 +172,20 @@
                                 <action selector="backButton:" destination="RF2-Sa-ltn" id="buQ-yt-DRP"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title=". . ." id="64U-XZ-Nkw">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="actionsheet:" destination="RF2-Sa-ltn" id="vbW-w8-YQA"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="q7V-Re-Nss" kind="show" identifier="PostImage" id="aD2-mK-fKv"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fwL-a0-Acm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2879.1999999999998" y="696.7016491754124"/>
+            <point key="canvasLocation" x="3186" y="697"/>
         </scene>
         <!--Images-->
         <scene sceneID="5kM-5u-jsC">
@@ -203,7 +212,6 @@
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="y7X-nq-55U">
                             <connections>
                                 <action selector="upload:" destination="giO-Uj-f6v" id="vYx-ZB-BUP"/>
-                                <segue destination="q7V-Re-Nss" kind="show" identifier="UploadImage" id="sj5-3j-se6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -272,13 +280,13 @@
                     <connections>
                         <outlet property="imageName" destination="fti-D7-bh8" id="5Mc-qJ-auX"/>
                         <outlet property="imagedisplay" destination="Vcy-mF-qRZ" id="IIq-Wq-v7z"/>
-                        <segue destination="giO-Uj-f6v" kind="show" identifier="UploadSuccess" id="nHN-yA-suf"/>
+                        <segue destination="RF2-Sa-ltn" kind="show" identifier="UploadGood" id="RtW-Cw-hMJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lNl-qB-aiW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="O2O-sq-92T"/>
             </objects>
-            <point key="canvasLocation" x="3743" y="-230"/>
+            <point key="canvasLocation" x="3978" y="-239"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SgL-Sa-6jO">
@@ -302,4 +310,7 @@
     <resources>
         <image name="upload_defaut_image.jpg" width="640" height="480"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="RtW-Cw-hMJ"/>
+    </inferredMetricsTieBreakers>
 </document>
