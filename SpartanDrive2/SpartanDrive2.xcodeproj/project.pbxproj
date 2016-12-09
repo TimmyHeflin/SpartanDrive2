@@ -29,6 +29,7 @@
 		3FABF0B11DF367DE00CCAF44 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FABF0B01DF367DE00CCAF44 /* ImageCell.swift */; };
 		3FABF0B31DF367F000CCAF44 /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FABF0B21DF367F000CCAF44 /* TextCell.swift */; };
 		3FFB23FD1DF0031E00B3DDD2 /* PostPDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FFB23FC1DF0031E00B3DDD2 /* PostPDFViewController.swift */; };
+		5E0BF2161DFA794A00314703 /* PostTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0BF2151DFA794A00314703 /* PostTextViewController.swift */; };
 		5E676EFD1DF7344A0069D089 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E676EFC1DF7344A0069D089 /* SpinnerView.swift */; };
 		68D37EE8A8E129D29CF70339 /* Pods_SpartanDrive2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2ABEAF2AD26247D989CF4D8 /* Pods_SpartanDrive2UITests.framework */; };
 		A3924488D3BA654016E0F33A /* Pods_SpartanDrive2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E959DD9AB22A1C424A8AFD /* Pods_SpartanDrive2.framework */; };
@@ -84,6 +85,7 @@
 		3FABF0B01DF367DE00CCAF44 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		3FABF0B21DF367F000CCAF44 /* TextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
 		3FFB23FC1DF0031E00B3DDD2 /* PostPDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostPDFViewController.swift; sourceTree = "<group>"; };
+		5E0BF2151DFA794A00314703 /* PostTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTextViewController.swift; sourceTree = "<group>"; };
 		5E676EFC1DF7344A0069D089 /* SpinnerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		99B71864AF0B071F255C2AF9 /* Pods-SpartanDrive2UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanDrive2UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpartanDrive2UITests/Pods-SpartanDrive2UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A29742442B05E9DB555A0675 /* Pods_SpartanDrive2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpartanDrive2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				0443C3051DE4A8D7003FA2FA /* ViewController.swift */,
+				5E0BF2151DFA794A00314703 /* PostTextViewController.swift */,
 				3FFB23FC1DF0031E00B3DDD2 /* PostPDFViewController.swift */,
 				0443C3321DE4AB8D003FA2FA /* RegisterViewController.swift */,
 				0443C3371DE4BE16003FA2FA /* LoginViewController.swift */,
@@ -557,6 +560,7 @@
 				5E676EFD1DF7344A0069D089 /* SpinnerView.swift in Sources */,
 				3FABF0AD1DF35D3A00CCAF44 /* FolderTemplateViewController.swift in Sources */,
 				3FFB23FD1DF0031E00B3DDD2 /* PostPDFViewController.swift in Sources */,
+				5E0BF2161DFA794A00314703 /* PostTextViewController.swift in Sources */,
 				0443C3381DE4BE16003FA2FA /* LoginViewController.swift in Sources */,
 				04533D9B1DEC0505004F2B77 /* Extensions.swift in Sources */,
 				3FABF0B31DF367F000CCAF44 /* TextCell.swift in Sources */,

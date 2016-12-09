@@ -21,6 +21,7 @@ class MainMenuViewController: UITableViewController {
     let databaseref = FIRDatabase.database().reference()
     let storageref = FIRStorage.storage().reference(forURL: "gs://spartan-storage.appspot.com")
     let user = FIRAuth.auth()?.currentUser
+    var checkForRefresh = true
     
     //options for top right button
     let options = ["New Folder", "New Image", "New Text", "Share..."]
@@ -51,6 +52,7 @@ class MainMenuViewController: UITableViewController {
         let uploadText = UIAlertAction(title: "Upload Text", style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             print("upText pressed!")
+            self.performSegue(withIdentifier: "UploadText", sender: self)
             //implement whatever here
         })
         let makeFolder = UIAlertAction(title: "Make Folder", style: .default, handler: {
@@ -84,6 +86,14 @@ class MainMenuViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if checkForRefresh {
+            checkForRefresh = !checkForRefresh
+            self.tableView.reloadData()
+            //self.refreshControl?.addTarget(self, action: #selector(ViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+            //setNeedsLayout()
+            
+        }
         
         self.viewDidAppear(true)
         

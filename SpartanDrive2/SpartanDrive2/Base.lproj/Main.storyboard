@@ -57,7 +57,7 @@
         <scene sceneID="1bM-Q1-UFD">
             <objects>
                 <navigationController id="Qe6-AS-Qgv" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jX5-CK-96j">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jX5-CK-96j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -76,10 +76,10 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Folder" id="ex2-Sa-NcM" customClass="FolderCell" customModule="SpartanDrive2">
-                                <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ex2-Sa-NcM" id="FDg-Go-qI8">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="🗂" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hx-b3-cBE" userLabel="folderTag">
@@ -104,10 +104,10 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Image" id="020-kC-14V" customClass="ImageCell" customModule="SpartanDrive2" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="100" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="020-kC-14V" id="fQV-J7-PWy">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="🖼" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQV-ZL-ANb" userLabel="imageTag">
@@ -132,10 +132,10 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Text" id="0NI-mo-Owd" customClass="TextCell" customModule="SpartanDrive2" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="144" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="143.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0NI-mo-Owd" id="PaD-5n-jRC">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="✏️" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jab-hL-ewa" userLabel="textTag">
@@ -181,6 +181,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="q7V-Re-Nss" kind="show" identifier="PostImage" id="aD2-mK-fKv"/>
+                        <segue destination="ZbE-cb-YNa" kind="show" identifier="UploadText" id="0K3-Yc-5xE"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fwL-a0-Acm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -191,7 +192,7 @@
         <scene sceneID="5kM-5u-jsC">
             <objects>
                 <collectionViewController id="giO-Uj-f6v" customClass="ImageCollectionViewController" customModule="SpartanDrive2" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="m9D-dE-2JN">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="m9D-dE-2JN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -293,7 +294,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4u3-EH-fzx" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dzg-kH-e5T">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dzg-kH-e5T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -306,11 +307,146 @@
             </objects>
             <point key="canvasLocation" x="1940" y="696.7016491754124"/>
         </scene>
+        <!--Post Image View Controller-->
+        <scene sceneID="S7K-Y7-2rc">
+            <objects>
+                <viewController id="ZCn-QE-Yqz" customClass="PostImageViewController" customModule="SpartanDrive2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Uqd-uy-xJA"/>
+                        <viewControllerLayoutGuide type="bottom" id="atr-AM-Vt9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GCn-ch-HME">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbN-1k-JN1">
+                                <rect key="frame" x="117" y="347" width="140" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2BE-au-6ow"/>
+                                    <constraint firstAttribute="width" constant="140" id="gTT-0e-wuy"/>
+                                </constraints>
+                                <state key="normal" title="Upload">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadImage:" destination="ZCn-QE-Yqz" eventType="touchUpInside" id="DUT-tb-BpN"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Image Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GDv-8Q-4Bh">
+                                <rect key="frame" x="67" y="296" width="240" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="nXG-bY-7Eu"/>
+                                    <constraint firstAttribute="width" constant="240" id="uS7-i2-5Cy"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="upload_defaut_image.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Cm1-eW-NZb">
+                                <rect key="frame" x="50" y="51" width="274" height="207"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="GFw-Nx-8h9"/>
+                                    <constraint firstAttribute="height" constant="165" id="Pls-eZ-9R8"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="B26-yJ-prO" appends="YES" id="UWS-PU-iKT"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.19247682569999999" green="0.5935366742" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GDv-8Q-4Bh" firstAttribute="top" secondItem="Cm1-eW-NZb" secondAttribute="bottom" constant="21" id="0kQ-zI-nLr"/>
+                            <constraint firstItem="Cm1-eW-NZb" firstAttribute="top" secondItem="Uqd-uy-xJA" secondAttribute="bottom" constant="69" id="6ql-GA-KU4"/>
+                            <constraint firstItem="Cm1-eW-NZb" firstAttribute="centerX" secondItem="GCn-ch-HME" secondAttribute="centerX" id="GiV-Yh-INS"/>
+                            <constraint firstItem="dbN-1k-JN1" firstAttribute="top" secondItem="GDv-8Q-4Bh" secondAttribute="bottom" constant="30" id="VNT-4b-Stt"/>
+                            <constraint firstItem="dbN-1k-JN1" firstAttribute="centerX" secondItem="GCn-ch-HME" secondAttribute="centerX" id="cEq-2l-9Ib"/>
+                            <constraint firstItem="GDv-8Q-4Bh" firstAttribute="centerX" secondItem="GCn-ch-HME" secondAttribute="centerX" id="lsX-wU-JKE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageName" destination="GDv-8Q-4Bh" id="wMC-qh-u1G"/>
+                        <outlet property="imagedisplay" destination="Cm1-eW-NZb" id="LWL-jn-ZEI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zNu-Bo-YBi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="B26-yJ-prO"/>
+            </objects>
+            <point key="canvasLocation" x="3978" y="-239"/>
+        </scene>
+        <!--Post Text View Controller-->
+        <scene sceneID="erd-dY-Zay">
+            <objects>
+                <viewController id="ZbE-cb-YNa" customClass="PostTextViewController" customModule="SpartanDrive2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FTF-0c-xB3"/>
+                        <viewControllerLayoutGuide type="bottom" id="nKr-Ml-Q5Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qGw-zA-OwE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oO-NN-hH4">
+                                <rect key="frame" x="117" y="347" width="140" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5ny-1M-MfX"/>
+                                    <constraint firstAttribute="width" constant="140" id="owB-Mb-6kl"/>
+                                </constraints>
+                                <state key="normal" title="Upload">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadImage:" destination="ZbE-cb-YNa" eventType="touchUpInside" id="wVe-aL-7Pp"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gLU-Ff-qTL">
+                                <rect key="frame" x="67" y="296" width="240" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="pNH-s7-qPt"/>
+                                    <constraint firstAttribute="width" constant="240" id="vDM-z8-06y"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="upload_defaut_image.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="zIr-e7-bwi">
+                                <rect key="frame" x="50" y="51" width="274" height="207"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="QIk-Ve-8fr"/>
+                                    <constraint firstAttribute="height" constant="165" id="Vn6-pn-xc8"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="eIP-V3-7BO" appends="YES" id="3G3-KA-ql1"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.19247682569999999" green="0.5935366742" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gLU-Ff-qTL" firstAttribute="top" secondItem="zIr-e7-bwi" secondAttribute="bottom" constant="21" id="5HM-w1-edi"/>
+                            <constraint firstItem="7oO-NN-hH4" firstAttribute="centerX" secondItem="qGw-zA-OwE" secondAttribute="centerX" id="AFr-lP-Qsz"/>
+                            <constraint firstItem="7oO-NN-hH4" firstAttribute="top" secondItem="gLU-Ff-qTL" secondAttribute="bottom" constant="30" id="MZm-sv-kfU"/>
+                            <constraint firstItem="zIr-e7-bwi" firstAttribute="top" secondItem="FTF-0c-xB3" secondAttribute="bottom" constant="69" id="TfG-Pn-5LS"/>
+                            <constraint firstItem="zIr-e7-bwi" firstAttribute="centerX" secondItem="qGw-zA-OwE" secondAttribute="centerX" id="Zvo-PJ-u2a"/>
+                            <constraint firstItem="gLU-Ff-qTL" firstAttribute="centerX" secondItem="qGw-zA-OwE" secondAttribute="centerX" id="jsB-OZ-ztJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageName" destination="gLU-Ff-qTL" id="3DI-lU-iTH"/>
+                        <outlet property="imagedisplay" destination="zIr-e7-bwi" id="Zd3-e8-UOQ"/>
+                        <segue destination="RF2-Sa-ltn" kind="show" identifier="UploadTextSuccess" id="cvX-Ns-t3h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dut-hL-aTp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="eIP-V3-7BO"/>
+            </objects>
+            <point key="canvasLocation" x="4937" y="421"/>
+        </scene>
     </scenes>
     <resources>
         <image name="upload_defaut_image.jpg" width="640" height="480"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RtW-Cw-hMJ"/>
+        <segue reference="cvX-Ns-t3h"/>
     </inferredMetricsTieBreakers>
 </document>

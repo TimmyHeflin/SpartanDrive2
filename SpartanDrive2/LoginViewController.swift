@@ -122,7 +122,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate{
     
     let profileImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "gameofthrones_splash")
+        imageView.image = UIImage(named: "Spartan-Storage_Final_19072013_full")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         return imageView
@@ -149,13 +149,14 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate{
         view.addSubview(loginButton)
         view.addSubview(RegisterButton)
         view.addSubview(googleLoginButton)
+        view.addSubview(profileImageView)
         
         
         setupInputsContainerView()
         setupLoginRegisterButton()
         setupRegisterButton()
         setupGoogleButtons()
-        
+        setupProfileImage()
         filePath = FIRDatabase.database().reference()
         filePathArr = []
         nextFilePath = ""
@@ -229,6 +230,13 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate{
         RegisterButton.topAnchor.constraint(equalTo:googleLoginButton.bottomAnchor, constant: 12).isActive = true
         RegisterButton.widthAnchor.constraint(equalTo: googleLoginButton.widthAnchor).isActive = true
         RegisterButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
+    
+    fileprivate func setupProfileImage(){
+        profileImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        profileImageView.bottomAnchor.constraint(equalTo:emailTextField.topAnchor, constant: -12).isActive = true
+        profileImageView.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        profileImageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
     }
     
     @objc private func handleLogin(){
