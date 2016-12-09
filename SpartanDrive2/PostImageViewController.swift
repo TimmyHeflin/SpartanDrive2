@@ -38,21 +38,24 @@ class PostImageViewController: UIViewController,UIImagePickerControllerDelegate,
 
 
     @IBAction func uploadImage(_ sender: Any) {
-        upload()
+        
+        if imageName.text! != nil {
+            upload()
+        }
+        else {
+            //error message
+            print("There is no name!")
+        }
+        
     }
         
     private func upload(){
        
         
-        let userref = self.databaseref.child("users")
+        
+        let userref = filePath
         let imagesRef = self.storageref.child("myimage")
-        if imageName.text! != nil
-        {
-            imagename = imageName.text! as NSString!
-        }
-        else{
-            imagename = "default"
-        }
+        
         if let user = FIRAuth.auth()?.currentUser{
             print("user uid")
             print(user.uid)
@@ -63,30 +66,69 @@ class PostImageViewController: UIViewController,UIImagePickerControllerDelegate,
                         print(error)
                     }
                     print("upload successfully")
-                    let imageURLs = userref.child(user.uid).child("IMG_URLS")
-                    let values = ["\(self.imagename!)" : metadata!.downloadURLs![0].absoluteString] as [String : Any]
-                    imageURLs.updateChildValues(values,withCompletionBlock: { (err, ref) in
+                    //let imageURLs = userref.child(user.uid).child("IMG_URLS")
+                    
+                    //let values = ["\(self.imageName!.text!)" : metadata!.downloadURLs![0].absoluteString] as [String : Any]
+                    trueArray[self.imageName.text!] = metadata!.downloadURLs![0].absoluteString as String
+                    userref?.updateChildValues(trueArray,withCompletionBlock: { (err, ref) in
                         if err != nil {
                             print(err)
                             return
                         }
                         
                         print("Saved urls to database")
+                        MainMenuViewController().refreshControl?.beginRefreshing()
                         self.handleSuccessUpload()
-                        
                     })
-                    
                     print(metadata!.downloadURLs![0])
                 })
             }
         }
         
-        }
+        
+        //        let userref = self.databaseref.child("users")
+        //        let imagesRef = self.storageref.child("myimage")
+        //        if imageName.text! != nil
+        //        {
+        //            imagename = imageName.text! as NSString!
+        //        }
+        //        else{
+        //            imagename = "default"
+        //        }
+        //        if let user = FIRAuth.auth()?.currentUser{
+        //            print("user uid")
+        //            print(user.uid)
+        //            let uploadRef = imagesRef.child("\(user.email!)/\(imagename!).png")
+        //            if let uploadData = UIImagePNGRepresentation(imagedisplay.image!){
+        //                uploadRef.put(uploadData, metadata: nil, completion: {(metadata, error) in
+        //                    if (error != nil){
+        //                        print(error)
+        //                    }
+        //                    print("upload successfully")
+        //                    let imageURLs = userref.child(user.uid).child("IMG_URLS")
+        //                    let values = ["\(self.imagename!)" : metadata!.downloadURLs![0].absoluteString] as [String : Any]
+        //                    imageURLs.updateChildValues(values,withCompletionBlock: { (err, ref) in
+        //                        if err != nil {
+        //                            print(err)
+        //                            return
+        //                        }
+        //
+        //                        print("Saved urls to database")
+        //                        self.handleSuccessUpload()
+        //                        
+        //                    })
+        //                    
+        //                    print(metadata!.downloadURLs![0])
+        //                })
+        //            }
+        //        }
+
+    }
     
     
     private func handleSuccessUpload(){
         
-            performSegue(withIdentifier: "UploadSuccess", sender: self)
+            performSegue(withIdentifier: "UploadGood", sender: self)
     }
     
     func browserImageHandler(){
@@ -97,8 +139,11 @@ class PostImageViewController: UIViewController,UIImagePickerControllerDelegate,
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        imagedisplay.image = image
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imagedisplay.image = image
+        } else{
+            print("Something went wrong")
+        }
         let path = info[UIImagePickerControllerReferenceURL] as! NSURL
         if (path.lastPathComponent! as NSString!) != nil{
             imagename = (path.lastPathComponent! as NSString!)

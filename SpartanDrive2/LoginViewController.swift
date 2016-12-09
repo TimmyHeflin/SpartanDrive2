@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import GoogleSignIn
 
+var trueArray = [String:String]()
 var filePath: FIRDatabaseReference!
 var filePathArr: Array<Any>!
 var nextFilePath: String!
@@ -149,6 +150,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate{
         view.addSubview(RegisterButton)
         view.addSubview(googleLoginButton)
         
+        
         setupInputsContainerView()
         setupLoginRegisterButton()
         setupRegisterButton()
@@ -158,6 +160,8 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate{
         filePathArr = []
         nextFilePath = ""
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -328,6 +332,40 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate{
         }
         
         print("getDescription is done")
+    }
+    
+    func performToRefresh(folderPath: FIRDatabaseReference) {
+        let semaphore = DispatchSemaphore(value:0)
+        
+        print("the current folder path" + folderPath.description())
+        
+        
+        
+        folderPath.observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            let value = snapshot.value as? NSDictionary
+            
+            if value != nil {
+                //print(snapshot.value as? NSDictionary)
+                dataFromDatabase = value!
+                print("after setting theValue: " + (dataFromDatabase?.description)!)
+                
+                semaphore.signal()
+            }
+            else {
+                print("went into else")
+                semaphore.signal()
+            }
+            
+        })
+        
+        let timeout = DispatchTime.now() + DispatchTimeInterval.seconds(1)
+        
+        if semaphore.wait(timeout: timeout) == DispatchTimeoutResult.timedOut {
+            print("test timed out")
+        }
+        
+        print("perform is done")
     }
     
     private func handleSuccessfullSignIn(){

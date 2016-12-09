@@ -15,7 +15,7 @@ class MainMenuViewController: UITableViewController {
 
     //example of cells being produced
     let exampleArray = ["folder", "image", "folder", "text", "image", "image", "text"]
-    var trueArray = [String:String]()
+    
     
     //references
     let databaseref = FIRDatabase.database().reference()
@@ -45,6 +45,7 @@ class MainMenuViewController: UITableViewController {
         let uploadImage = UIAlertAction(title: "Upload Image", style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             print("upImage pressed!")
+            self.performSegue(withIdentifier: "PostImage", sender: self)
             //implement whatever here
         })
         let uploadText = UIAlertAction(title: "Upload Text", style: .default, handler: {
@@ -83,6 +84,8 @@ class MainMenuViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.viewDidAppear(true)
         
         navigationItem.title = nextFilePath
         
@@ -163,7 +166,7 @@ class MainMenuViewController: UITableViewController {
                 
                 if key.key as? String != "dummy" {
                     
-                    if (key.value as? String)!.characters.first != "i" {
+                    if getHttpsFromImages(firstFiveLetters:(key.value as? String)!) != "https" {
                         
                         //text case
                         print("t" + String(indexCount))
@@ -217,7 +220,7 @@ class MainMenuViewController: UITableViewController {
         let cell = processCell(sender: sender) as? ImageCell
         print("image id: ")
         print ((cell?.id)!)
-        performSegue(withIdentifier: "PostImage", sender: self)
+        
     }
 
     func tapTextCell(sender: UIGestureRecognizer) {
@@ -251,6 +254,13 @@ class MainMenuViewController: UITableViewController {
     func clickOnItem(anyCell: Any?) {
         nextFilePath = (anyCell! as AnyObject).name
         filePath = filePath.child(nextFilePath)
+    }
+    
+    func getHttpsFromImages(firstFiveLetters: String) -> String {
+        let b = firstFiveLetters.characters
+        let c = b.index(b.startIndex, offsetBy: 0)..<b.index(b.startIndex, offsetBy: 5)
+        let substring = firstFiveLetters[c]
+        return substring
     }
     
     func insert(){

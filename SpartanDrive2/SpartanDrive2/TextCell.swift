@@ -37,6 +37,7 @@ class TextCell:UITableViewCell{
         label.text = "✏️"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.textAlignment = .left
         return label
     }()
     
@@ -46,6 +47,7 @@ class TextCell:UITableViewCell{
         label.text = "text"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.textAlignment = .left
         return label
     }()
     
@@ -66,7 +68,7 @@ class TextCell:UITableViewCell{
         //this is the horizontal constraint for all views
         //withVisualFormat shows their positions in the cell
         //views is the array of views in the cell
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[v0]-[v1]-263-[v2]-25-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": textImageLabel, "v1": textNameLabel, "v2": delButton]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[v0]-[v1]-250-[v2]-25-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": textImageLabel, "v1": textNameLabel, "v2": delButton]))
         
         //add action
         delButton.addTarget(self, action: "handleAction", for: .touchUpInside)

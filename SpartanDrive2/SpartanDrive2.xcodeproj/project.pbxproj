@@ -333,10 +333,13 @@
 				TargetAttributes = {
 					0443C2FF1DE4A8D7003FA2FA = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 5SC9K3K4Z4;
+						DevelopmentTeam = 7BHCDJ55EZ;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
 								enabled = 1;
 							};
 						};
@@ -714,7 +717,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SpartanDrive2/SpartanDrive2.entitlements;
-				DEVELOPMENT_TEAM = 5SC9K3K4Z4;
+				DEVELOPMENT_TEAM = 7BHCDJ55EZ;
 				INFOPLIST_FILE = SpartanDrive2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Spartan-Storage.SpartanDrive2";
@@ -729,7 +732,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SpartanDrive2/SpartanDrive2.entitlements;
-				DEVELOPMENT_TEAM = 5SC9K3K4Z4;
+				DEVELOPMENT_TEAM = 7BHCDJ55EZ;
 				INFOPLIST_FILE = SpartanDrive2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Spartan-Storage.SpartanDrive2";

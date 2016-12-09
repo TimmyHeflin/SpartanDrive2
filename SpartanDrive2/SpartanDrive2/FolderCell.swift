@@ -45,6 +45,7 @@ class FolderCell:UITableViewCell{
         label.text = "🗂"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.textAlignment = .left
         return label
     }()
 
@@ -54,6 +55,7 @@ class FolderCell:UITableViewCell{
         label.text = "folder"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.textAlignment = .left
         return label
     }()
     

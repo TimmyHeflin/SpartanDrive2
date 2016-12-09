@@ -37,6 +37,7 @@ class ImageCell:UITableViewCell{
         label.text = "🖼"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.textAlignment = .left
         return label
     }()
     
@@ -46,6 +47,7 @@ class ImageCell:UITableViewCell{
         label.text = "image"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.textAlignment = .left
         return label
     }()
     
